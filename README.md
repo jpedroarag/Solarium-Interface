@@ -52,7 +52,7 @@ RF0053 | Formatar texto em itálico
 
 ## Cliente
 
-O cliente é o professor Wellington Wagner Ferreira Sarmento, do curso de Sistemas e Mídias Digitais.
+O cliente é o professor Wellington Wagner Ferreira Sarmento, do curso de Sistemas e Mídias Digitais da Universidade Federal do Ceará.
 
 ## Membros da equipe
 
