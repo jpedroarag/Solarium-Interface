@@ -1,70 +1,63 @@
-# Getting Started with Create React App
+# Solarium UI
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Desenvolvido pela equipe Lua, o Solarium UI é um produto voltado para a fácil e rápida criação e publicação de aulas, usando mídias nos formatos de texto, imagem, vídeo e links externos.
 
-## Available Scripts
+# Requisitos implementados
 
-In the project directory, you can run:
+> Os seguintes requisitos são atendidos automaticamente pelo uso do framework CKEditor, logo, por enquanto, não há referência de função e arquivo para tal.
 
-### `npm start`
+Requisito | Descrição
+-------|---------
+RF0005 | Desfazer última ação
+RF0006 | Refazer última ação 
+RF0007 | Inserir texto
+RF0008 | Inserir imagem
+RF0009 | Inserir vídeo
+RF0010 | Inserir link externo
+RF0011 | Editar endereço do link externo inserido
+RF0012 | Desanexar link
+RF0013 | Tornar lista de marcadores
+RF0014 | Tornar lista numerada
+RF0015 | Tornar citação
+RF0016 | Diminuir recuo
+RF0017 | Aumentar recuo
+RF0018 | Inserir bloco de citação
+RF0019 | Transformar em bloco de citação
+RF0020 | Criar tabela a partir de delimitação de linhas e colunas
+RF0021 | Editar coluna
+RF0022 | Transformar em coluna de cabeçalho
+RF0023 | Inserir coluna à esquerda
+RF0024 | Inserir coluna à direita
+RF0025 | Deletar coluna
+RF0026 | Selecionar coluna
+RF0027 | Transformar em linha de cabeçalho
+RF0028 | Inserir linha acima
+RF0029 | Inserir linha abaixo
+RF0030 | Deletar linha
+RF0031 | Selecionar linha
+RF0032 | Unir a célula acima
+RF0033 | Unir a célula a direita
+RF0034 | Unir a célula abaixo
+RF0035 | Unir a célula esquerda
+RF0036 | Dividir célula verticalmente
+RF0037 | Dividir célula horizontalmente
+RF0048 | Definir estilo de texto como “Parágrafo”
+RF0049 | Definir estilo de texto como “Título 1”
+RF0050 | Definir estilo de texto como “Título 2”
+RF0051 | Definir estilo de texto como “Título 3”
+RF0052 | Formatar texto em negrito
+RF0053 | Formatar texto em itálico
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+# Detalhes sobre cliente e equipe
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Cliente
 
-### `npm test`
+O cliente é o professor Wellington Wagner Ferreira Sarmento, do curso de Sistemas e Mídias Digitais.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Membros da equipe
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+* Daniel Alves Furtado - 474120
+* Heloise Barreto Sá - 472262
+* João Pedro Aragão Felício- 494119
+* João Victor Teixeira Cavalcante  - 472207
+* José Cleiton Carneiro Filho - 473850
