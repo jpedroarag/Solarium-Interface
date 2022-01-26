@@ -9,51 +9,51 @@ Desenvolvido pela equipe Lua, o Solarium UI é um produto voltado para a fácil 
 Requisito | Descrição | Situação
 -------|---------
 RF0001 | Mostrar tela de edição de aula | Não iniciado
-RF0002 | Mostrar tela “Aulas”
-RF0003 | Remover aula
-RF0004 | Editar aula criada
-RF0005 | Desfazer última ação 
-RF0006 | Refazer última ação 
-RF0007 | Inserir texto
-RF0008 | Inserir imagem
-RF0009 | Inserir vídeo
-RF0010 | Inserir link externo
-RF0011 | Editar endereço do link externo inserido
-RF0012 | Desanexar link
-RF0013 | Tornar lista de marcadores
-RF0014 | Tornar lista numerada
-RF0015 | Tornar citação
-RF0016 | Diminuir recuo
-RF0017 | Aumentar recuo
-RF0018 | Inserir bloco de citação
-RF0019 | Transformar em bloco de citação
-RF0020 | Criar tabela a partir de delimitação de linhas e colunas
-RF0021 | Editar coluna
-RF0022 | Transformar em coluna de cabeçalho
-RF0023 | Inserir coluna à esquerda
-RF0024 | Inserir coluna à direita
-RF0025 | Deletar coluna
-RF0026 | Selecionar coluna
-RF0027 | Transformar em linha de cabeçalho
-RF0028 | Inserir linha acima
-RF0029 | Inserir linha abaixo
-RF0030 | Deletar linha
-RF0031 | Selecionar linha
-RF0032 | Unir a célula acima
-RF0033 | Unir a célula a direita
-RF0034 | Unir a célula abaixo
-RF0035 | Unir a célula esquerda
-RF0036 | Dividir célula verticalmente
-RF0037 | Dividir célula horizontalmente
-RF0048 | Definir estilo de texto como “Parágrafo”
-RF0049 | Definir estilo de texto como “Título 1”
-RF0050 | Definir estilo de texto como “Título 2”
-RF0051 | Definir estilo de texto como “Título 3”
-RF0052 | Formatar texto em negrito
-RF0053 | Formatar texto em itálico
-RF0054 | Formatar texto em itálico
-RF0055 | Formatar texto em itálico
-RF0056 | Formatar texto em itálico
+RF0002 | Mostrar tela “Aulas” | Não iniciado
+RF0003 | Remover aula | Não iniciado
+RF0004 | Editar aula criada | Não iniciado
+RF0005 | Desfazer última ação | Não iniciado
+RF0006 | Refazer última ação | Não iniciado
+RF0007 | Inserir texto | Não iniciado
+RF0008 | Inserir imagem | Não iniciado
+RF0009 | Inserir vídeo | Não iniciado
+RF0010 | Inserir link externo | Não iniciado
+RF0011 | Editar endereço do link externo inserido | Não iniciado
+RF0012 | Desanexar link | Não iniciado
+RF0013 | Tornar lista de marcadores | Não iniciado
+RF0014 | Tornar lista numerada | Não iniciado
+RF0015 | Tornar citação | Não iniciado
+RF0016 | Diminuir recuo | Não iniciado
+RF0017 | Aumentar recuo | Não iniciado
+RF0018 | Inserir bloco de citação | Não iniciado
+RF0019 | Transformar em bloco de citação | Não iniciado
+RF0020 | Criar tabela a partir de delimitação de linhas e colunas | Não iniciado
+RF0021 | Editar coluna | Não iniciado
+RF0022 | Transformar em coluna de cabeçalho | Não iniciado
+RF0023 | Inserir coluna à esquerda | Não iniciado
+RF0024 | Inserir coluna à direita | Não iniciado
+RF0025 | Deletar coluna | Não iniciado
+RF0026 | Selecionar coluna | Não iniciado
+RF0027 | Transformar em linha de cabeçalho | Não iniciado
+RF0028 | Inserir linha acima | Não iniciado
+RF0029 | Inserir linha abaixo | Não iniciado
+RF0030 | Deletar linha | Não iniciado
+RF0031 | Selecionar linha | Não iniciado
+RF0032 | Unir a célula acima | Não iniciado
+RF0033 | Unir a célula a direita | Não iniciado
+RF0034 | Unir a célula abaixo | Não iniciado
+RF0035 | Unir a célula esquerda | Não iniciado
+RF0036 | Dividir célula verticalmente | Não iniciado
+RF0037 | Dividir célula horizontalmente | Não iniciado
+RF0048 | Definir estilo de texto como “Parágrafo” | Não iniciado
+RF0049 | Definir estilo de texto como “Título 1” | Não iniciado
+RF0050 | Definir estilo de texto como “Título 2” | Não iniciado
+RF0051 | Definir estilo de texto como “Título 3” | Não iniciado
+RF0052 | Formatar texto em negrito | Não iniciado
+RF0053 | Formatar texto em itálico | Não iniciado
+RF0054 | Formatar texto em itálico | Não iniciado
+RF0055 | Formatar texto em itálico | Não iniciado
+RF0056 | Formatar texto em itálico | Não iniciado
 
 # Detalhes sobre cliente e equipe
 
