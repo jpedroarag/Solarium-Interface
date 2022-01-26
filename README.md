@@ -19,7 +19,7 @@ RF0008 | Inserir imagem | Iniciado
 RF0009 | Inserir vídeo | Iniciado
 RF0010 | Inserir link externo | Concluído
 RF0011 | Editar endereço do link externo inserido | Concluído
-RF0012 | Desanexar link | Não iniciado
+RF0012 | Desanexar link | Concluído
 RF0013 | Tornar lista de marcadores | Concluído
 RF0014 | Tornar lista numerada | Concluído
 RF0015 | Tornar citação | Concluído
