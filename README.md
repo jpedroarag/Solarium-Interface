@@ -51,9 +51,9 @@ RF0050 | Definir estilo de texto como “Título 2” | Não iniciado
 RF0051 | Definir estilo de texto como “Título 3” | Não iniciado
 RF0052 | Formatar texto em negrito | Não iniciado
 RF0053 | Formatar texto em itálico | Não iniciado
-RF0054 | Formatar texto em itálico | Não iniciado
-RF0055 | Formatar texto em itálico | Não iniciado
-RF0056 | Formatar texto em itálico | Não iniciado
+RF0054 | Filtrar conteúdo do Material de Apoio por categorias | Não iniciado
+RF0055 | Identificar a que aula pertence um arquivo no Material de Apoio | Não iniciado
+RF0056 | Criar tags personalizadas | Não iniciado
 
 # Detalhes sobre cliente e equipe
 
