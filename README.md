@@ -8,6 +8,10 @@ Desenvolvido pela equipe Lua, o Solarium UI é um produto voltado para a fácil 
 
 Requisito | Descrição
 -------|---------
+RF0001
+RF0002
+RF0003
+RF0004
 RF0005 | Desfazer última ação 
 RF0006 | Refazer última ação 
 RF0007 | Inserir texto
