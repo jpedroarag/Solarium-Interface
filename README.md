@@ -45,6 +45,16 @@ RF0034 | Unir a célula abaixo | Concluído
 RF0035 | Unir a célula esquerda | Concluído
 RF0036 | Dividir célula verticalmente | Concluído
 RF0037 | Dividir célula horizontalmente | Concluído
+RF0038 | Relacionar uma aula com material de apoio | Não iniciado
+RF0039 | Remover relação entre aulas | Não iniciado
+RF0040 | Salvar aula como rascunho | Não iniciado
+RF0041 | Publicar aula no ambiente | Não iniciado
+RF0042 | Remover publicação de aula no ambiente | Não iniciado
+RF0043 | Criar seções de aulas (páginas) | Não iniciado
+RF0044 | Relacionar seções de aulas | Não iniciado
+RF0045 | Criar índice de seções de aulas | Não iniciado
+RF0046 | Remover relações entre aulas | Não iniciado
+RF0047 | Atualizar índice de seções de aula | Não iniciado
 RF0048 | Definir estilo de texto como “Parágrafo” | Concluído
 RF0049 | Definir estilo de texto como “Título 1” | Concluído
 RF0050 | Definir estilo de texto como “Título 2” | Concluído
