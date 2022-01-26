@@ -8,10 +8,10 @@ Desenvolvido pela equipe Lua, o Solarium UI é um produto voltado para a fácil 
 
 Requisito | Descrição
 -------|---------
-RF0001
-RF0002
-RF0003
-RF0004
+RF0001 | Mostrar tela de edição de aula | Não iniciado
+RF0002 | Mostrar tela “Aulas”
+RF0003 | Remover aula
+RF0004 | Editar aula criada
 RF0005 | Desfazer última ação 
 RF0006 | Refazer última ação 
 RF0007 | Inserir texto
@@ -51,6 +51,9 @@ RF0050 | Definir estilo de texto como “Título 2”
 RF0051 | Definir estilo de texto como “Título 3”
 RF0052 | Formatar texto em negrito
 RF0053 | Formatar texto em itálico
+RF0054 | Formatar texto em itálico
+RF0055 | Formatar texto em itálico
+RF0056 | Formatar texto em itálico
 
 # Detalhes sobre cliente e equipe
 
