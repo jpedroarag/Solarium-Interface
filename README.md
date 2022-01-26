@@ -7,7 +7,7 @@ Desenvolvido pela equipe Lua, o Solarium UI é um produto voltado para a fácil 
 > Os seguintes requisitos são atendidos automaticamente pelo uso do framework CKEditor, logo, por enquanto, não há referência de função e arquivo para tal.
 
 Requisito | Descrição | Situação
--------|---------
+-------|---------|-------
 RF0001 | Mostrar tela de edição de aula | Não iniciado
 RF0002 | Mostrar tela “Aulas” | Não iniciado
 RF0003 | Remover aula | Não iniciado
