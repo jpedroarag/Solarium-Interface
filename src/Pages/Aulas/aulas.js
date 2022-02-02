@@ -27,11 +27,10 @@ const aulas = props => {
                         <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
                             <div class="flex-shrink-0 flex items-center">
                                 {/*Logo superior esquerdo*/}
-                                <Link to={'/home'}>
-                                <a href="#">
+
+
                                 <img class="hidden lg:block h-5 w-auto" src="./Imagens/logo.png" alt="Workflow" />
-                                </a>
-                                </Link>
+
                             </div>
 
                         </div>
@@ -48,6 +47,11 @@ const aulas = props => {
 
 
                             </div>
+
+                            <div className="flex">
+                                <h1 className="text-white">|  </h1>
+                                <a href="#" className="text-white font-semibold hover:text-blue-500 mx-4">Acessibilidade</a>
+                            </div>
                             <Link to={'/'}>
                                 <button className="flex px-4 py-3">
                                     <svg class="h-8 w-8 mx-1 text-white" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z" />  <path d="M14 8v-2a2 2 0 0 0 -2 -2h-7a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h7a2 2 0 0 0 2 -2v-2" />  <path d="M7 12h14l-3 -3m0 6l3 -3" /></svg>
@@ -63,40 +67,113 @@ const aulas = props => {
                 </div>
 
 
-                
+
             </nav>
             {/* componete 1 */}
             <div className="flex">
-                {/* Agenda calenário*/}
-                <div className="bg-white  xl:w-80  h-screen rounded-lg px-1 py-1 content-center items-center mt-16 ml-36 mb-16  ">
-                    <div>
-                        <h1 className=" bg-gray-200 rounded-lg m-2 px-6 py-3 text-xl font-semibold text-gray-500">Entre na sua conta :D</h1>
+                {/* Barra esquerda*/}
+                <div className="bg-white xl:w-80 h-max rounded-lg px-1 py-1 content-center mt-16 ml-36 mb-16  ">
+                    <div className=" hover:bg-gray-200 focus:bg-gray-300">
+                        <a href="#" className="flex m-4 px-4 py-1 text-xl realtive my-4">
+                            {/* icone casa*/}
+                            <svg class="h-7 w-7 text-yellow-500" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />  <polyline points="9 22 9 12 15 12 15 22" />
+                            </svg>
+                            <h1 className=" mx-2 mt-px font-semibold text-gray-500">Início</h1>
+
+                        </a>
                     </div>
-                    <div>
-                        <h1 className=" bg-gray-200 rounded-lg m-2 px-6 py-3 text-xl font-semibold text-gray-500">Entre na sua conta :D</h1>
+                    <div className=" hover:bg-gray-200 focus:bg-gray-300">
+                        <a href="#" className="flex m-4 px-4 py-1 text-xl realtive my-4">
+                            {/* icone conteudo*/}
+                            <svg class="h-7 w-7 text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2" />
+                            </svg>
+
+                            <h1 className=" mx-2 mt-px font-semibold text-gray-500">Conteúdo</h1>
+                            {/* icone seta baixo*/}
+                            <svg class="h-6 w-6 mt-1 text-gray-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">  <polyline points="6 9 12 15 18 9" /></svg>
+                        </a>
                     </div>
+                    <div className=" hover:bg-gray-200 focus:bg-gray-300">
+                        <a href="#" className="flex m-4 px-4 py-1 text-xl realtive my-4">
+                            {/* icone lápis*/}
+                            <svg class="h-7 w-7 text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+                            </svg>
+
+                            <h1 className=" mx-2 mt-px font-semibold text-gray-500">Atividades</h1>
+                            {/* icone seta baixo*/}
+                            <svg class="h-6 w-6 mt-1 text-gray-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">  <polyline points="6 9 12 15 18 9" /></svg>
+
+
+                        </a>
+                    </div>
+                    <div className=" hover:bg-gray-200 focus:bg-gray-300">
+                        <a href="#" className="flex m-4 px-4 py-1 text-xl realtive my-4">
+                            {/* icone info*/}
+                            <svg class="h-7 w-7 text-yellow-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">  <circle cx="12" cy="12" r="10" />  <line x1="12" y1="16" x2="12" y2="12" />  <line x1="12" y1="8" x2="12.01" y2="8" /></svg>
+                            <h1 className=" mx-2 mt-px font-semibold text-gray-500">Informações gerais</h1>
+                            {/* icone seta baixo*/}
+                            <svg class="h-6 w-6 mt-1 text-gray-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">  <polyline points="6 9 12 15 18 9" /></svg>
+                        </a>
+                    </div>
+                    <div className=" hover:bg-gray-200 focus:bg-gray-300">
+                        <a href="#" className="flex m-4 px-4 py-1 text-xl realtive my-4">
+                            {/* icone carta*/}
+                            <svg class="h-7 w-7 text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
+
+                            <h1 className=" mx-2 mt-px font-semibold text-gray-500">Mensagens</h1>
+                        </a>
+                    </div>
+                    <div className=" hover:bg-gray-200 focus:bg-gray-300">
+                        <a href="#" className="flex m-4 px-4 py-1 text-xl realtive my-4">
+                            {/* icone V*/}
+                            <svg class="h-7 w-7 text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+
+                            <h1 className=" mx-2 mt-px font-semibold text-gray-500">Matrículas</h1>
+                        </a>
+                    </div>
+
+
+
                 </div>
-                {/* disciplinas*/}
+
+
+                {/* navegação esquerda*/}
                 <div className="xl:w-1/2 ">
 
-                    <div className=" flex mt-6 ml-3 ">
+                    <div className=" flex mt-16 ml-3 ">
 
-                        <svg class="h-8 w-8 text-yellow-500" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z" />  <rect x="8" y="4" width="12" height="12" rx="2" />  <path d="M16 16v2a2 2 0 0 1 -2 2h-8a2 2 0 0 1 -2 -2v-8a2 2 0 0 1 2 -2h2" /></svg>
-                        <h1 className="font-bold text-lg text-white">
-                            Disciplinas ativas
+                        <svg class="h-8 w-8 text-yellow-500 mx-2" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z" />  <rect x="8" y="4" width="12" height="12" rx="2" />  <path d="M16 16v2a2 2 0 0 1 -2 2h-8a2 2 0 0 1 -2 -2v-8a2 2 0 0 1 2 -2h2" /></svg>
+                        <h1 className="font-bold text-xl text-white">
+                            Aulas
                         </h1>
                     </div>
-                    <div className="bg-white lt:w1/2 h-screen rounded-lg px-1 py-1 content-center items-center mt-2 ml-3 mb-16">
-                         {/* projeto 1 */}
-                         <Link to={'/editor'}>
+                    <div className=" bg-white lt:w1/2 h-screen rounded-lg px-1 py-1 content-center items-center mt-2 ml-3 mb-16">
+                        {/* Abade de aulas */}
+                        <h1 className="my-2 mx-2 font-bold text-xl text-gray-600">Publicadas</h1>
+                        <hr className="my-3 mr-3 border-gray-300 w-full" />
+
                         <div className="">
-                            <a href="#" className="">
-                                <h1 className=" bg-gray-200 rounded-lg  m-2 px-6 py-3 text-xl font-semibold hover:text-yellow-500 focus:outline-none text-gray-500">Acessar o Editor</h1>
-                            </a>
+
+
+                            <h1 className=" bg-gray-200 rounded-lg  m-2 px-6 py-3 text-xl font-semibold text-gray-500">Você não possui aulas publicadas</h1>
+
                         </div>
-                        </Link>
-                        <div>
-                            <h1 className=" bg-gray-200 rounded-lg m-2 px-6 py-3 text-xl font-semibold text-gray-500">Entre na sua conta :D</h1>
+
+                        {/* Criar nova aula*/}
+                        <div className="">
+                            <Link to={'/editor'}>
+                                <button className=" bg-yellow-500 flex hover:bg-yellow-400 focus:bg-yellow-500
+                                                     px-4 py-2 ml-auto mr-1 realtive my-4 rounded-lg font-semibold 
+                                                     text-white ">Criar nova aula</button>
+                            </Link>
                         </div>
                     </div>
                 </div>

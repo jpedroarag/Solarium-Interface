@@ -5,6 +5,7 @@ import Home from './Pages/Home/home';
 import Aulas from './Pages/Aulas/aulas';
 import Editor from './Pages/Editor/editor';
 
+
 function App() {
   return (
     

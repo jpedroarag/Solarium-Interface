@@ -15,11 +15,11 @@ const Login = props => {
 
                     </div>
                     <div className="px-16" >
-                        <button className="  block bg-danielazul object-none  block  hover:bg-yellow-400 
+                        <button className="  block bg-yellow-500 object-none  block  hover:bg-yellow-400 
                         px-4 py-3 mt-6  left-0 my-4 mx-auto rounded-lg font-semibold text-white focus:bg-yellow-500">Não tem uma conta? Cadastre-se;)</button>
                     </div>
                     <div className="bg-gray-700 pl-16  ">
-                        <h1 className=" text-white text-center">
+                        <h1 className=" text-white text-center text-sm">
                         Ambiente Virtual de Aprendizagem da Universidade Federal do Ceará   | <a href="#" className="text-white hover:text-blue-700 focus:outline-none"> Política de privacidade</a>  |<a href="#" className="text-white hover:text-blue-700 focus:outline-none"> Ajuda</a>
                         </h1>
                         
@@ -50,7 +50,7 @@ const Login = props => {
                                 <input type="password" placeholder="Senha" minlength="6" className="w-full px-4 py-3 rounded-lg bg-gray-200 mt-2 border focus:border-blue-500
                         focus:bg-white focus:outline-none" required />
                             </div>
-                            <Link to="/home">
+                            <Link to="/aulas">
                                 <button  className="w-full block bg-yellow-500 hover:bg-yellow-400 px-4 py-3 mt-6 rounded-lg font-semibold text-white focus:bg-yellow-500" type="submit"  >Acessar</button>
                             </Link>
                             <div className="mt-4 ">

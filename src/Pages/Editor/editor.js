@@ -4,6 +4,7 @@ import Ckeditor from "./ckeditor"
 
 
 
+
 const editor = (props) => {
 
     {/* Ckeditor fuction */ }
@@ -31,11 +32,11 @@ const editor = (props) => {
                             <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
                                 <div class="flex-shrink-0 flex items-center">
                                     {/*Logo superior esquerdo*/}
-                                    <Link to={'/home'}>
-                                        <a href="#">
+                              
+                                 
                                             <img class="hidden lg:block h-5 w-auto" src="./Imagens/logo.png" alt="Workflow" />
-                                        </a>
-                                    </Link>
+                              
+                                
                                 </div>
 
                             </div>
@@ -71,9 +72,16 @@ const editor = (props) => {
                 </nav>
             </div>
             
-            <div className="my-6 mx-6 rounded-lg  ">
+            <div className="relative my-6 mx-6 rounded-lg flex ">
                 <h1 className="text-white text-lg font-bold mb-2">Editor de Aulas</h1>
-                <Ckeditor />
+                <div className="flex absolute right-0">
+                <button className=" block bg-yellow-500 hover:bg-yellow-400 px-6 py-2 mx-1 rounded-lg font-semibold text-white focus:bg-yellow-500">Salvar rascunho</button>
+                <button className=" block bg-yellow-500 hover:bg-yellow-400 px-6 py-2 mx-1 rounded-lg font-semibold text-white focus:bg-yellow-500">Publicar aula</button>
+                </div>
+                
+            </div>
+            <div>
+            <Ckeditor />
             </div>
 
 
