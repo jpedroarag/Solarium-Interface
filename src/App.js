@@ -1,28 +1,21 @@
-import './App.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import React, { useState } from 'react';
-import { CKEditor } from '@ckeditor/ckeditor5-react';
-import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import Login from './Pages/Login';
+import Home from './Pages/Home/home';
+import Aulas from './Pages/Aulas/aulas';
+import Editor from './Pages/Editor/editor';
 
 function App() {
-  const [text, setText] = useState('')
   return (
-    <div className="App">
-      <div className="editor">
-        <CKEditor
-          editor={ClassicEditor}
-          data={text}
-          onChange={(event, editor) => {
-            const data = editor.getData()
-            setText(data)
-
-          }
-          } />
-      </div>
-          <div>
-            <h2>Content</h2>
-            <p>{text}</p>
-          </div>
-    </div>
+    
+    <Router>
+      <Routes>
+        <Route path = "/" element={<Login />} />
+        <Route path = "/home" element={<Home />} />
+        <Route path = "/aulas" element={<Aulas />} />
+        <Route path = "/editor" element={<Editor />} />
+      </Routes>
+    </Router>
   );
 }
 
