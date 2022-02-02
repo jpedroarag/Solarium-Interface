@@ -6,7 +6,7 @@ import Aulas from './Pages/Aulas/aulas';
 import Editor from './Pages/Editor/editor';
 
 
-function App() {
+const App = () => {
   return (
     
     <Router>

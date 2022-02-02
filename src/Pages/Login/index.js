@@ -4,10 +4,10 @@ const Login = props => {
     return (
         <div>
 
-            <section className='flex  md:flex-row  '>
+            <section className='flex  md:flex-row realtive  '>
 
             
-                <div className="w-full content-center items-center md:w-1/2 xl:w-2/3 xl: ">
+                <div className="w-full realative content-center items-center md:w-1/2 xl:w-2/3 xl: ">
                     <div className="lg:items-center ">
                         <img className="mx-auto mt-8 w-2/6 w:auto " src='./Imagens/logo.png' alt="" />
                         <img  className="w-1/2 mx-auto"src="./Imagens/ilustracao.png" alt="" />
@@ -18,8 +18,8 @@ const Login = props => {
                         <button className="  block bg-yellow-500 object-none  block  hover:bg-yellow-400 
                         px-4 py-3 mt-6  left-0 my-4 mx-auto rounded-lg font-semibold text-white focus:bg-yellow-500">Não tem uma conta? Cadastre-se;)</button>
                     </div>
-                    <div className="bg-gray-700 pl-16  ">
-                        <h1 className=" text-white text-center text-sm">
+                    <div className=" inset-x-0 top-0 bg-gray-700 pl-16 ">
+                        <h1 className=" text-white text-center">
                         Ambiente Virtual de Aprendizagem da Universidade Federal do Ceará   | <a href="#" className="text-white hover:text-blue-700 focus:outline-none"> Política de privacidade</a>  |<a href="#" className="text-white hover:text-blue-700 focus:outline-none"> Ajuda</a>
                         </h1>
                         

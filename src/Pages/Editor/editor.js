@@ -89,21 +89,22 @@ const editor = (props) => {
                 </Link>
             </div>
 
-            <div className="relative my-6 mx-12 rounded-lg flex ">
+            <div className="relative mt-6 mx-16 rounded-lg flex ">
                 <div>
 
                     <h1 className="text-white text-2xl font-bold mb-2">Editor de Aulas</h1>
+                    <input type="text" placeholder=" Título"></input>
 
                 </div>
 
 
                 <div className="flex absolute right-0">
-                    <button className=" block bg-yellow-500 hover:bg-yellow-400 px-6 py-2 mx-1 rounded-lg font-semibold text-white focus:bg-yellow-500">Salvar rascunho</button>
+                    <button className=" block bg-yellow-500 hover:bg-yellow-400 px-6 py-2 mx-1 rounded-lg font-semibold text-white focus:bg-yellow-500">Salvar</button>
                     <button className=" block bg-yellow-500 hover:bg-yellow-400 px-6 py-2 mx-1 rounded-lg font-semibold text-white focus:bg-yellow-500">Publicar aula</button>
                 </div>
 
             </div>
-            <div>
+            <div className="mx-16">
                 <Ckeditor />
             </div>
 
