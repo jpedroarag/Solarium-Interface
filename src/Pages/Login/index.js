@@ -15,7 +15,7 @@ const Login = props => {
 
                     </div>
                     <div className="px-16" >
-                        <button className="  block bg-yellow-500 object-none  block  hover:bg-yellow-400 
+                        <button className="  block bg-danielazul object-none  block  hover:bg-yellow-400 
                         px-4 py-3 mt-6  left-0 my-4 mx-auto rounded-lg font-semibold text-white focus:bg-yellow-500">Não tem uma conta? Cadastre-se;)</button>
                     </div>
                     <div className="bg-gray-700 pl-16  ">
