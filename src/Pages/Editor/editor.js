@@ -32,11 +32,11 @@ const editor = (props) => {
                             <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
                                 <div class="flex-shrink-0 flex items-center">
                                     {/*Logo superior esquerdo*/}
-                              
-                                 
-                                            <img class="hidden lg:block h-5 w-auto" src="./Imagens/logo.png" alt="Workflow" />
-                              
-                                
+
+
+                                    <img class="hidden lg:block h-5 w-auto" src="./Imagens/logo.png" alt="Workflow" />
+
+
                                 </div>
 
                             </div>
@@ -53,6 +53,10 @@ const editor = (props) => {
 
 
                                 </div>
+                                <div className="flex">
+                                    <h1 className="text-white">|  </h1>
+                                    <a href="#" className="text-white font-semibold hover:text-blue-500 mx-4">Acessibilidade</a>
+                                </div>
                                 <Link to={'/'}>
                                     <button className="flex px-4 py-3">
                                         <svg class="h-8 w-8 mx-1 text-white" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z" />  <path d="M14 8v-2a2 2 0 0 0 -2 -2h-7a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h7a2 2 0 0 0 2 -2v-2" />  <path d="M7 12h14l-3 -3m0 6l3 -3" /></svg>
@@ -68,20 +72,39 @@ const editor = (props) => {
                     </div>
 
 
-                   
+
                 </nav>
             </div>
-            
-            <div className="relative my-6 mx-6 rounded-lg flex ">
-                <h1 className="text-white text-lg font-bold mb-2">Editor de Aulas</h1>
-                <div className="flex absolute right-0">
-                <button className=" block bg-yellow-500 hover:bg-yellow-400 px-6 py-2 mx-1 rounded-lg font-semibold text-white focus:bg-yellow-500">Salvar rascunho</button>
-                <button className=" block bg-yellow-500 hover:bg-yellow-400 px-6 py-2 mx-1 rounded-lg font-semibold text-white focus:bg-yellow-500">Publicar aula</button>
-                </div>
+            <div>
+                <Link to={'/aulas'}>
                 
+                <button className="flex my-3 mx-12">
+                    <svg class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 15l-3-3m0 0l3-3m-3 3h8M3 12a9 9 0 1118 0 9 9 0 01-18 0z" />
+                    </svg>
+                    <h1 className="text-white font-bold my-1 ml-1">
+                        Voltar
+                    </h1>
+                </button>
+                </Link>
+            </div>
+
+            <div className="relative my-6 mx-12 rounded-lg flex ">
+                <div>
+
+                    <h1 className="text-white text-2xl font-bold mb-2">Editor de Aulas</h1>
+
+                </div>
+
+
+                <div className="flex absolute right-0">
+                    <button className=" block bg-yellow-500 hover:bg-yellow-400 px-6 py-2 mx-1 rounded-lg font-semibold text-white focus:bg-yellow-500">Salvar rascunho</button>
+                    <button className=" block bg-yellow-500 hover:bg-yellow-400 px-6 py-2 mx-1 rounded-lg font-semibold text-white focus:bg-yellow-500">Publicar aula</button>
+                </div>
+
             </div>
             <div>
-            <Ckeditor />
+                <Ckeditor />
             </div>
 
 
