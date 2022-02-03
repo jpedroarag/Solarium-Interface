@@ -1,4 +1,5 @@
 import React from "react";
+const authCheck = require("../../authCheck");
 
 class Login extends React.Component {
     constructor(props) {
@@ -7,8 +8,8 @@ class Login extends React.Component {
             email: "",
             password: "",
             error: null
-        }
-        if(localStorage.getItem("userName") && localStorage.getItem("accessToken")) {
+        };
+        if(authCheck.isAuthorized()) {
             this.redirectToList();
         }
     }
@@ -46,18 +47,23 @@ class Login extends React.Component {
             return response.ok ? response.json() : Promise.reject(response.status);
         })
         .then(json => {
+            var expirationDate = new Date();
+            expirationDate.setDate(expirationDate.getDate() + 1);
+
             localStorage.setItem("userName", json.name);
             localStorage.setItem("accessToken", json.accessToken);
+            localStorage.setItem("expirationDate", expirationDate);
+            
             this.redirectToList();
         })
         .catch(error => {
-            const errorString = error == 401 ? "Senha inválida!" : "Houve um erro. Confira as credenciais e tente novamente."
+            const errorString = error === 401 ? "Senha inválida!" : "Houve um erro. Confira as credenciais e tente novamente."
             alert(errorString)
         })
     }
 
     redirectToList() {
-        const newUrl = "http://localhost:3000/aulas";
+        const newUrl = `${process.env.REACT_APP_CLIENT_URL}/aulas`;
         document.location.replace(newUrl);
     }
 
