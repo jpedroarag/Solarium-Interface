@@ -1,11 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Ckeditor from "./ckeditor"
+import CKEditorComponent from "./ckeditor"
 
 
 
 
-const editor = (props) => {
+const Editor = (props) => {
 
     {/* Ckeditor fuction */ }
     return (
@@ -105,7 +105,7 @@ const editor = (props) => {
 
             </div>
             <div className="mx-16">
-                <Ckeditor />
+                <CKEditorComponent />
             </div>
 
 
@@ -115,4 +115,4 @@ const editor = (props) => {
     );
 }
 
-export default editor;
+export default Editor;
