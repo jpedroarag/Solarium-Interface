@@ -20,7 +20,7 @@ class Aulas extends React.Component {
     signout(event) {
         localStorage.removeItem("userName");
         localStorage.removeItem("accessToken");
-        document.location.replace(`${process.env.REACT_APP_CLIENT_URL}`)
+        this.redirectToLogin();
     }
 
     redirectToLogin() {
