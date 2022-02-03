@@ -1,12 +1,12 @@
-import React, { useState } from "react";
-import { Link, Route } from "react-router-dom";
+import React from "react";
 
 class Login extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             email: "",
-            password: ""
+            password: "",
+            error: null
         }
     }
 
@@ -48,7 +48,10 @@ class Login extends React.Component {
             const newUrl = "http://localhost:3000/aulas";
             document.location.replace(newUrl);
         })
-        .catch(error => console.log(error))
+        .catch(error => {
+            const errorString = error == 401 ? "Senha inválida!" : "Houve um erro. Confira as credenciais e tente novamente."
+            alert(errorString)
+        })
     }
 
     render() {
@@ -100,9 +103,7 @@ class Login extends React.Component {
                                     <input type="password" placeholder="Senha" minLength="6" onChange={event => this.updatePassword(event)} className="w-full px-4 py-3 rounded-lg bg-gray-200 mt-2 border focus:border-blue-500
                             focus:bg-white focus:outline-none" required />
                                 </div>
-                                <Link to="/aulas" onClick={event => this.signin(event)}>
-                                    <button className="w-full block bg-yellow-500 hover:bg-yellow-400 px-4 py-3 mt-6 rounded-lg font-semibold text-white focus:bg-yellow-500" type="submit"  >Acessar</button>
-                                </Link>
+                                <button className="w-full block bg-yellow-500 hover:bg-yellow-400 px-4 py-3 mt-6 rounded-lg font-semibold text-white focus:bg-yellow-500" type="submit"  >Acessar</button>
                                 <div className="mt-4 ">
                                     <a href="#" className="text-gray-500 hover:text-blue-700 focus:outline-none">Esqueci minha senha</a>
                                 </div>
