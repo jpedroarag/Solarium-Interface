@@ -36,7 +36,7 @@ class Login extends React.Component {
         const headers = new Headers({
             "Content-Type": "application/json"
         });
-        const request = new Request("https://solarium-api.herokuapp.com/auth/signin", {
+        const request = new Request(`${process.env.REACT_APP_API_BASE_URL}/auth/signin`, {
             method: "POST",
             headers: headers,
             body: content
