@@ -8,6 +8,9 @@ class Login extends React.Component {
             password: "",
             error: null
         }
+        if(localStorage.getItem("userName") && localStorage.getItem("accessToken")) {
+            this.redirectToList();
+        }
     }
 
     updateEmail(event) {
@@ -45,13 +48,17 @@ class Login extends React.Component {
         .then(json => {
             localStorage.setItem("userName", json.name);
             localStorage.setItem("accessToken", json.accessToken);
-            const newUrl = "http://localhost:3000/aulas";
-            document.location.replace(newUrl);
+            this.redirectToList();
         })
         .catch(error => {
             const errorString = error == 401 ? "Senha inválida!" : "Houve um erro. Confira as credenciais e tente novamente."
             alert(errorString)
         })
+    }
+
+    redirectToList() {
+        const newUrl = "http://localhost:3000/aulas";
+        document.location.replace(newUrl);
     }
 
     render() {
