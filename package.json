@@ -5,6 +5,9 @@
   "dependencies": {
     "@ckeditor/ckeditor5-build-classic": "^32.0.0",
     "@ckeditor/ckeditor5-react": "^3.0.3",
+    "@headlessui/react": "^1.4.3",
+    "@headlessui/vue": "^1.4.3",
+    "@heroicons/react": "^1.0.5",
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",

@@ -14,7 +14,7 @@ function Ckeditor() {
   return (
 
 
-    <div style={{ width: '1200px', display: 'inline-block', textAlign: 'left' }}>
+    <div className='' style={{ width: '1200px', display: 'inline-block', textAlign: 'left' }}>
       <div style={{ width: '1200px', display: 'inline-block', textAlign: 'right', marginBottom: '5px' }}>
         <button style={{  color: 'white' }} onClick={() => showData(!addedData)}>{addedData ? 'Hide Data' : 'Show Data'}</button>
 

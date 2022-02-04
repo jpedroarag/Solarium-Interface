@@ -42,7 +42,7 @@ const Login = props => {
                             <div className="mt-4">
 
                                 <input type="email" placeholder="Login" className="w-full px-4 py-3 rounded-lg bg-gray-200 mt-2 border focus:border-blue-500
-                        focus:bg-white focus:outline-none" autocomplete autofocus required />
+                        focus:bg-white focus:outline-none" autoComplete autofocus required />
                             </div>
 
                             <div className="mt-4">
