@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 const authCheck = require("../../authCheck");
 
 class Login extends React.Component {
@@ -80,8 +81,10 @@ class Login extends React.Component {
     
                         </div>
                         <div className="px-16" >
+                            <Link to={'/cadastro'}>
                             <button className="  block bg-yellow-500 object-none  block  hover:bg-yellow-400 
                             px-4 py-3 mt-6  left-0 my-4 mx-auto rounded-lg font-semibold text-white focus:bg-yellow-500">Não tem uma conta? Cadastre-se;)</button>
+                            </Link>
                         </div>
                         <div className=" inset-x-0 top-0 bg-gray-700 pl-16 ">
                             <h1 className=" text-white text-center">
