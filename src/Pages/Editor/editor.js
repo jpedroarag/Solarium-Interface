@@ -1,14 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-<<<<<<< HEAD
-import Ckeditor from "./ckeditor"
-import Popup from "../../Componente/Popup";
-=======
 import CKEditorComponent from "./ckeditor"
-
-
-
->>>>>>> c58194c93578d7bca4e2f0868ff60e0d1e4775b0
+import Popup from "../../Componente/Popup";
 
 const Editor = (props) => {
 
