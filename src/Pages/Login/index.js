@@ -48,13 +48,7 @@ class Login extends React.Component {
             return response.ok ? response.json() : Promise.reject(response.status);
         })
         .then(json => {
-            var expirationDate = new Date();
-            expirationDate.setDate(expirationDate.getDate() + 1);
-
-            localStorage.setItem("userName", json.name);
-            localStorage.setItem("accessToken", json.accessToken);
-            localStorage.setItem("expirationDate", expirationDate);
-            
+            authCheck.signin(json.name, json.accessToken);
             this.redirectToList();
         })
         .catch(error => {

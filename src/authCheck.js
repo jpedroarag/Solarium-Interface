@@ -15,3 +15,18 @@ exports.isAuthorized = () => {
         && localStorage.getItem("accessToken") != null
         && daysDifference > 0;
 }
+
+exports.signin = (name, token) => {
+    var expirationDate = new Date();
+    expirationDate.setDate(expirationDate.getDate() + 1);
+
+    localStorage.setItem("userName", name);
+    localStorage.setItem("accessToken", token);
+    localStorage.setItem("expirationDate", expirationDate);
+}
+
+exports.signout = () => {
+    localStorage.removeItem("userName");
+    localStorage.removeItem("accessToken");
+    localStorage.removeItem("expirationDate");
+}
