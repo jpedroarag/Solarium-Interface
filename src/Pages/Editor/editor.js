@@ -8,11 +8,91 @@ const authCheck = require("../../authCheck");
 class Editor extends React.Component {
     constructor(props) {
         super(props);
+
+        if(!authCheck.isAuthorized()) {
+            this.redirectToLogin();
+            return;
+        }
+        
+        const path = window.location.pathname;
+        const id = path.substring(path.lastIndexOf('/') + 1)
+        const isNew = (id == null);
+
         this.state = {
-            name: "",
+            name: "Nova aula",
             htmlString: "",
-            shouldDisplayPopup: false
+            shouldDisplayPopup: false,
+            isNew: isNew,
+            editor: null
         };
+
+        if(!isNew) {
+            this.fetchLessonFromServer(id);
+        }
+    }
+
+    fetchLessonFromServer(id) {
+        const body = JSON.stringify({ id: id });
+        const headers = new Headers({
+            "Content-Type": "application/json",
+            "x-access-token": localStorage.getItem("accessToken")
+        });
+        const request = new Request(`${process.env.REACT_APP_API_BASE_URL}/lessons/fetchSingle`, {
+            method: "POST",
+            headers: headers,
+            body: body
+        });
+        fetch(request)
+        .then((response) => {
+            return response.ok ? response.json() : Promise.reject(response.status);
+        })
+        .then(lesson => {
+            const editor = this.state.editor;
+            
+            if(editor) {
+                editor.setData(lesson.htmlString);
+            }
+
+            this.setState({ 
+                name: lesson.name,
+                htmlString: lesson.htmlString,
+                shouldDisplayPopup: this.state.shouldDisplayPopup,
+                isNew: this.state.isNew,
+                editor: this.state.editor
+            });
+        })
+        .catch(error => {
+            console.log(error)
+        })
+    }
+
+    saveChanges() {
+        const lessonData = {
+            name: this.state.name,
+            htmlString: this.state.htmlString
+        }
+        const body = this.state.isNew ? lessonData : {
+            name: this.state.name,
+            update: lessonData
+        }
+        const endpoint = this.state.isNew ? "create" : "update"
+        const headers = new Headers({
+            "Content-Type": "application/json",
+            "x-access-token": localStorage.getItem("accessToken")
+        });
+        const request = new Request(`${process.env.REACT_APP_API_BASE_URL}/lessons/${endpoint}`, {
+            method: "POST",
+            headers: headers,
+            body: JSON.stringify(body)
+        });
+        fetch(request)
+        .then((response) => {
+            return response.ok ? response.json() : Promise.reject(response.status);
+        })
+        .then(json => {})
+        .catch(error => {
+            alert("Houve um erro ao tentar salvar, tente novamente!")
+        })
     }
 
     signout() {
@@ -25,11 +105,33 @@ class Editor extends React.Component {
         document.location.replace(newUrl);
     }
 
+    updateEditor(editor) {
+        this.setState({
+            name: this.state.name,
+            htmlString: this.state.htmlString,
+            shouldDisplayPopup: this.state.shouldDisplayPopup,
+            isNew: this.state.isNew,
+            editor: editor
+        });
+    }
+
     updateHtmlString(htmlString) {
         this.setState({
             name: this.state.name,
             htmlString: htmlString,
-            shouldDisplayPopup: this.state.shouldDisplayPopup
+            shouldDisplayPopup: this.state.shouldDisplayPopup,
+            isNew: this.state.isNew,
+            editor: this.state.editor
+        });
+    }
+
+    changePopupVisibility(isVisible) {
+        this.setState({ 
+            name: this.state.name,
+            htmlString: this.state.htmlString,
+            shouldDisplayPopup: isVisible,
+            isNew: this.state.isNew,
+            editor: this.state.editor
         });
     }
 
@@ -73,7 +175,7 @@ class Editor extends React.Component {
                                         <div className="flex mt-1">
                                             <button type="button" className="mx-2 px-2 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
                                                 <span className="sr-only">Open user menu</span>
-                                                <img className="h-8 w-8 rounded-full" src="./imagens/smile.png" alt="" />
+                                                <img className="h-8 w-8 rounded-full" src="./Imagens/smile.png" alt="" />
                                                 <h1 className="mt-1 px-2 text-white font-bold">{userName}</h1>
                                             </button>
                                         </div>
@@ -84,12 +186,10 @@ class Editor extends React.Component {
                                         <h1 className="text-white">|  </h1>
                                         <a href="#" className="text-white font-semibold hover:text-blue-500 mx-4">Acessibilidade</a>
                                     </div>
-                                    <Link to={'/'}>
-                                        <button className="flex px-4 py-3">
-                                            <svg className="h-8 w-8 mx-1 text-white" width="24" height="24" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">  <path stroke="none" d="M0 0h24v24H0z" />  <path d="M14 8v-2a2 2 0 0 0 -2 -2h-7a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h7a2 2 0 0 0 2 -2v-2" />  <path d="M7 12h14l-3 -3m0 6l3 -3" /></svg>
-                                            <h1 className=" pt-1 font-bold text-white ">Sair</h1>
-                                        </button>
-                                    </Link>
+                                    <button onClick={event => this.signout()} className="flex px-4 py-3">
+                                        <svg className="h-8 w-8 mx-1 text-white" width="24" height="24" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">  <path stroke="none" d="M0 0h24v24H0z" />  <path d="M14 8v-2a2 2 0 0 0 -2 -2h-7a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h7a2 2 0 0 0 2 -2v-2" />  <path d="M7 12h14l-3 -3m0 6l3 -3" /></svg>
+                                        <h1 className=" pt-1 font-bold text-white ">Sair</h1>
+                                    </button>
 
 
 
@@ -125,7 +225,10 @@ class Editor extends React.Component {
 
 
                     <div className="flex absolute right-0">
-                        <button  type='button' className=" block bg-yellow-500 hover:bg-yellow-400 px-6 py-2 mx-1 rounded-lg font-semibold text-white focus:bg-yellow-500" onClick={event=> Popup()}>Salvar
+                        <button type='button' 
+                                className=" block bg-yellow-500 hover:bg-yellow-400 px-6 py-2 mx-1 rounded-lg font-semibold text-white focus:bg-yellow-500" 
+                                onClick={event=> this.saveChanges()}>
+                            Salvar
                         </button>
                         {/*<button className=" block bg-yellow-500 hover:bg-yellow-400 px-6 py-2 mx-1 rounded-lg font-semibold text-white focus:bg-yellow-500">Publicar aula</button>*/}
                     </div>
@@ -135,7 +238,9 @@ class Editor extends React.Component {
                 <div className="mx-16" style={{ display: "flex", flexDirection: "column" }}>
                     <div className='' style={{ width: '100%', height: '100%', marginTop: '1rem', display: 'inline-block', textAlign: 'left' }}>
                         {/*<div style={{ width: '100%', height: '100%', display: 'inline-block', textAlign: 'right', marginBottom: '5px' }}></div>*/}
-                        <CKEditor editor = {ClassicEditor}  onChange={(e, editor) => this.updateHtmlString(editor.getData())} />
+                        <CKEditor editor={ClassicEditor} 
+                                  onReady={editor => this.updateEditor(editor)}  
+                                  onChange={(e, editor) => this.updateHtmlString(editor.getData())} />
                     </div>
                 </div>
             </>

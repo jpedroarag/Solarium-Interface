@@ -37,25 +37,25 @@ class Aulas extends React.Component {
             headers: headers
         });
         fetch(request)
-            .then((response) => {
-                return response.ok ? response.json() : Promise.reject(response.status);
-            })
-            .then(array => {
-                this.setState({ lessons: array });
-            })
-            .catch(error => {
-                console.log(error)
-            })
+        .then((response) => {
+            return response.ok ? response.json() : Promise.reject(response.status);
+        })
+        .then(array => {
+            this.setState({ lessons: array });
+        })
+        .catch(error => {
+            console.log(error)
+        })
     }
 
     render() {
         const userName = localStorage.getItem("userName");
         const allLessons = this.state.lessons.map(element => {
             return (
-                <a>
+                <Link to={`/editor/${element._id}`}>
                     <h1>{element.name}</h1>
                     <div dangerouslySetInnerHTML={{ __html: element.htmlString }} />
-                </a>
+                </Link>
             );
         })
         const lessonList = !allLessons.isEmpty ? allLessons : (
