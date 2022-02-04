@@ -1,9 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
+<<<<<<< HEAD
 import Ckeditor from "./ckeditor"
 import Popup from "../../Componente/Popup";
+=======
+import CKEditorComponent from "./ckeditor"
 
-const editor = (props) => {
+
+
+>>>>>>> c58194c93578d7bca4e2f0868ff60e0d1e4775b0
+
+const Editor = (props) => {
 
     {/* Ckeditor fuction */ }
     return (
@@ -104,7 +111,7 @@ const editor = (props) => {
                 <Popup />
             </div>
             <div className="mx-16">
-                <Ckeditor />
+                <CKEditorComponent />
             </div>
             
 
@@ -114,4 +121,4 @@ const editor = (props) => {
     );
 }
 
-export default editor;
+export default Editor;

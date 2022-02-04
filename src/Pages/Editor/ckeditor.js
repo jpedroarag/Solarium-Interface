@@ -3,11 +3,11 @@ import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
 {/* Ckeditor fuction */ }
-function Ckeditor() {
+function CKEditorComponent() {
 
   const [addData, setVal] = useState("");
   const [addedData, showData] = useState(0);
-  const handleChange =(e,editor) =>{
+  const handleChange = (e,editor) =>{
     const data = editor.getData();
     setVal(data);
   }
@@ -29,4 +29,4 @@ function Ckeditor() {
   );
 }
 
-export default Ckeditor;
+export default CKEditorComponent;
