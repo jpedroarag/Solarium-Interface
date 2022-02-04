@@ -115,7 +115,7 @@ class Login extends React.Component {
     
                                 <div className="mt-4">
     
-                                    <input type="password" placeholder="Senha" minLength="6" onChange={event => this.updatePassword(event)} className="w-full px-4 py-3 rounded-lg bg-gray-200 mt-2 border focus:border-blue-500
+                                    <input type="password" placeholder="Senha" minLength="8" onChange={event => this.updatePassword(event)} className="w-full px-4 py-3 rounded-lg bg-gray-200 mt-2 border focus:border-blue-500
                             focus:bg-white focus:outline-none" required />
                                 </div>
                                 <button className="w-full block bg-yellow-500 hover:bg-yellow-400 px-4 py-3 mt-6 rounded-lg font-semibold text-white focus:bg-yellow-500" type="submit"  >Acessar</button>
