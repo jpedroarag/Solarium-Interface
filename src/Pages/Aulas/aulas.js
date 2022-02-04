@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import celulaAulas from "./celulaAula";
+import CelulaAulas from "./celulaAula";
 
 const authCheck = require("../../authCheck");
 const colors = require('tailwindcss/colors');
@@ -65,9 +67,10 @@ class Aulas extends React.Component {
             </h1>
         )
         return (
-            <div className="align-middle ">
+            <div className="">
 
                 {/* barra superior */}
+
                 <nav class="bg-gray-800">
                     <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
                         <div class="relative flex items-center justify-between h-16">
@@ -130,114 +133,117 @@ class Aulas extends React.Component {
 
                 </nav>
                 {/* componete 1 */}
-                <div className="flex">
-                    {/* Barra esquerda*/}
-                    <div className="bg-white xl:w-80 h-max rounded-lg px-1 py-1 content-center mt-16 ml-36 mb-16  ">
-                        <div className=" hover:bg-gray-200 focus:bg-gray-300">
-                            <a href="#" className="flex m-4 px-4 py-1 text-xl realtive my-4">
-                                {/* icone casa*/}
-                                <svg class="h-7 w-7 text-yellow-500" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />  <polyline points="9 22 9 12 15 12 15 22" />
-                                </svg>
-                                <h1 className=" mx-2 mt-px font-semibold text-gray-500">Início</h1>
+                <div className="">
+                    <div className="flex ">
+                        {/* Barra esquerda*/}
+                        <div className="bg-white xl:w-80 h-max rounded-lg px-1 py-1 content-center mt-16 ml-36 mb-16  ">
+                            <div className=" hover:bg-gray-200 focus:bg-gray-300">
+                                <a href="#" className="flex m-4 px-4 py-1 text-xl realtive my-4">
+                                    {/* icone casa*/}
+                                    <svg class="h-7 w-7 text-yellow-500" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />  <polyline points="9 22 9 12 15 12 15 22" />
+                                    </svg>
+                                    <h1 className=" mx-2 mt-px font-semibold text-gray-500">Início</h1>
 
-                            </a>
-                        </div>
-                        <div className=" hover:bg-gray-200 focus:bg-gray-300">
-                            <a href="#" className="flex m-4 px-4 py-1 text-xl realtive my-4">
-                                {/* icone conteudo*/}
-                                <svg class="h-7 w-7 text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2" />
-                                </svg>
+                                </a>
+                            </div>
+                            <div className=" hover:bg-gray-200 focus:bg-gray-300">
+                                <a href="#" className="flex m-4 px-4 py-1 text-xl realtive my-4">
+                                    {/* icone conteudo*/}
+                                    <svg class="h-7 w-7 text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2" />
+                                    </svg>
 
-                                <h1 className=" mx-2 mt-px font-semibold text-gray-500">Conteúdo</h1>
-                                {/* icone seta baixo*/}
-                                <svg class="h-6 w-6 mt-1 text-gray-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">  <polyline points="6 9 12 15 18 9" /></svg>
-                            </a>
-                        </div>
-                        <div className=" hover:bg-gray-200 focus:bg-gray-300">
-                            <a href="#" className="flex m-4 px-4 py-1 text-xl realtive my-4">
-                                {/* icone lápis*/}
-                                <svg class="h-7 w-7 text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
-                                </svg>
+                                    <h1 className=" mx-2 mt-px font-semibold text-gray-500">Conteúdo</h1>
+                                    {/* icone seta baixo*/}
+                                    <svg class="h-6 w-6 mt-1 text-gray-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">  <polyline points="6 9 12 15 18 9" /></svg>
+                                </a>
+                            </div>
+                            <div className=" hover:bg-gray-200 focus:bg-gray-300">
+                                <a href="#" className="flex m-4 px-4 py-1 text-xl realtive my-4">
+                                    {/* icone lápis*/}
+                                    <svg class="h-7 w-7 text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+                                    </svg>
 
-                                <h1 className=" mx-2 mt-px font-semibold text-gray-500">Atividades</h1>
-                                {/* icone seta baixo*/}
-                                <svg class="h-6 w-6 mt-1 text-gray-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">  <polyline points="6 9 12 15 18 9" /></svg>
-
-
-                            </a>
-                        </div>
-                        <div className=" hover:bg-gray-200 focus:bg-gray-300">
-                            <a href="#" className="flex m-4 px-4 py-1 text-xl realtive my-4">
-                                {/* icone info*/}
-                                <svg class="h-7 w-7 text-yellow-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">  <circle cx="12" cy="12" r="10" />  <line x1="12" y1="16" x2="12" y2="12" />  <line x1="12" y1="8" x2="12.01" y2="8" /></svg>
-                                <h1 className=" mx-2 mt-px font-semibold text-gray-500">Informações gerais</h1>
-                                {/* icone seta baixo*/}
-                                <svg class="h-6 w-6 mt-1 text-gray-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">  <polyline points="6 9 12 15 18 9" /></svg>
-                            </a>
-                        </div>
-                        <div className=" hover:bg-gray-200 focus:bg-gray-300">
-                            <a href="#" className="flex m-4 px-4 py-1 text-xl realtive my-4">
-                                {/* icone carta*/}
-                                <svg class="h-7 w-7 text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                                </svg>
-
-                                <h1 className=" mx-2 mt-px font-semibold text-gray-500">Mensagens</h1>
-                            </a>
-                        </div>
-                        <div className=" hover:bg-gray-200 focus:bg-gray-300">
-                            <a href="#" className="flex m-4 px-4 py-1 text-xl realtive my-4">
-                                {/* icone V*/}
-                                <svg class="h-7 w-7 text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                </svg>
-
-                                <h1 className=" mx-2 mt-px font-semibold text-gray-500">Matrículas</h1>
-                            </a>
-                        </div>
+                                    <h1 className=" mx-2 mt-px font-semibold text-gray-500">Atividades</h1>
+                                    {/* icone seta baixo*/}
+                                    <svg class="h-6 w-6 mt-1 text-gray-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">  <polyline points="6 9 12 15 18 9" /></svg>
 
 
+                                </a>
+                            </div>
+                            <div className=" hover:bg-gray-200 focus:bg-gray-300">
+                                <a href="#" className="flex m-4 px-4 py-1 text-xl realtive my-4">
+                                    {/* icone info*/}
+                                    <svg class="h-7 w-7 text-yellow-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">  <circle cx="12" cy="12" r="10" />  <line x1="12" y1="16" x2="12" y2="12" />  <line x1="12" y1="8" x2="12.01" y2="8" /></svg>
+                                    <h1 className=" mx-2 mt-px font-semibold text-gray-500">Informações gerais</h1>
+                                    {/* icone seta baixo*/}
+                                    <svg class="h-6 w-6 mt-1 text-gray-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">  <polyline points="6 9 12 15 18 9" /></svg>
+                                </a>
+                            </div>
+                            <div className=" hover:bg-gray-200 focus:bg-gray-300">
+                                <a href="#" className="flex m-4 px-4 py-1 text-xl realtive my-4">
+                                    {/* icone carta*/}
+                                    <svg class="h-7 w-7 text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                    </svg>
 
-                    </div>
+                                    <h1 className=" mx-2 mt-px font-semibold text-gray-500">Mensagens</h1>
+                                </a>
+                            </div>
+                            <div className=" hover:bg-gray-200 focus:bg-gray-300">
+                                <a href="#" className="flex m-4 px-4 py-1 text-xl realtive my-4">
+                                    {/* icone V*/}
+                                    <svg class="h-7 w-7 text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
 
-
-                    {/* navegação esquerda*/}
-                    <div className="xl:w-1/2 ">
-
-                        <div className=" flex mt-16 ml-3 ">
-
-                            <svg class="h-8 w-8 text-yellow-500 mx-2" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z" />  <rect x="8" y="4" width="12" height="12" rx="2" />  <path d="M16 16v2a2 2 0 0 1 -2 2h-8a2 2 0 0 1 -2 -2v-8a2 2 0 0 1 2 -2h2" /></svg>
-                            <h1 className="font-bold text-xl text-white">
-                                Aulas
-                            </h1>
-                        </div>
-                        <div className=" relative bg-white lt:w1/2 h-screen rounded-lg px-1 py-1 content-center items-center mt-2 ml-3 mb-16">
-                            {/* Abade de aulas */}
-                            <h1 className="my-2 mx-2 font-bold text-xl text-gray-600">Publicadas</h1>
-                            <hr className="my-3 mr-3 border-gray-300 w-full" />
-
-                            <div className="">
-
-
-                                {lessonList}
-
+                                    <h1 className=" mx-2 mt-px font-semibold text-gray-500">Matrículas</h1>
+                                </a>
                             </div>
 
-                            {/* Criar nova aula*/}
-                            <div className="flex absolute right-0">
-                                <Link to={'/editor'}>
-                                <button type='button' className=" block bg-yellow-500 hover:bg-yellow-400 px-6 py-2 mx-1 rounded-lg font-semibold text-white focus:bg-yellow-500">Criar nova aula
-                                </button>
-                                </Link>
+
+
+                        </div>
+
+
+                        {/* navegação direita*/}
+                        <div className="mr-32 ">
+
+                            <div className=" flex mt-16 ml-3">
+                                <div className="flex mt-5">
+                                    <svg class="h-8 w-8 text-yellow-500 mx-2" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z" />  <rect x="8" y="4" width="12" height="12" rx="2" />  <path d="M16 16v2a2 2 0 0 1 -2 2h-8a2 2 0 0 1 -2 -2v-8a2 2 0 0 1 2 -2h2" /></svg>
+                                    <h1 className="font-bold text-xl text-white ">
+                                        Aulas
+                                    </h1>
+                                </div>
+                                {/* Criar nova aula*/}
+                                <div className="flex absolute right-0 mr-32 mt-2">
+                                    <Link to={'/editor'}>
+                                        <button type='button' className=" block bg-yellow-500 hover:bg-yellow-400 px-6 py-2 mx-1 rounded-lg font-semibold text-white focus:bg-yellow-500">Criar nova aula
+                                        </button>
+                                    </Link>
+                                </div>
+                            </div>
+                            <div className="  relative bg-white lt:w1/2 h-screen rounded-lg px-1 py-1 content-center items-center mt-2 ml-3 mb-16">
+                                {/* Abade de aulas */}
+                                <h1 className="my-2 mx-2 font-bold text-xl text-gray-600">Publicadas</h1>
+                                <hr className="my-3 mr-3 border-gray-300 " />
+
+                                <div className="overflow-auto  hover:overflow-scroll h-3/5 ">
+                                    <CelulaAulas />
+
+                                    {lessonList}
+
+                                </div>
+
+
                             </div>
                         </div>
                     </div>
                 </div>
-
             </div>
         );
     }

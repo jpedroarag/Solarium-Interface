@@ -51,8 +51,7 @@ const cadastro = props => {
                                 <input type="email" placeholder="Email" onChange={event => this.updateEmail(event)} className="w-full px-4 py-3 rounded-lg bg-gray-200 mt-2 border focus:border-blue-500
                         focus:bg-white focus:outline-none" autoFocus required />
                             </div>
-
-
+                            
                             <div className="mt-4">
                                 <input type="password" placeholder="Senha" minLength="6" onChange={event => this.updatePassword(event)} className="w-full px-4 py-3 rounded-lg bg-gray-200 mt-2 border focus:border-blue-500
                         focus:bg-white focus:outline-none" required />
