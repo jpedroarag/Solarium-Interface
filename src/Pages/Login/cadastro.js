@@ -82,7 +82,7 @@ class Cadastro extends React.Component {
             this.redirectToList();
         })
         .catch(error => {
-            alert(error)
+            alert("Usuário já cadastrado com o email informado.")
         })
     }
 

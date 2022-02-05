@@ -15,11 +15,12 @@ class Editor extends React.Component {
         }
         
         const path = window.location.pathname;
-        const id = path.substring(path.lastIndexOf('/') + 1)
-        const isNew = (id == null);
+        const id = path.substring(path.lastIndexOf('/') + 1);
+        const isNew = (id == null || id == "editor");
 
         this.state = {
             name: "Nova aula",
+            newName: "Nova aula",
             htmlString: "",
             shouldDisplayPopup: false,
             isNew: isNew,
@@ -55,6 +56,7 @@ class Editor extends React.Component {
 
             this.setState({ 
                 name: lesson.name,
+                newName: lesson.name,
                 htmlString: lesson.htmlString,
                 shouldDisplayPopup: this.state.shouldDisplayPopup,
                 isNew: this.state.isNew,
@@ -68,7 +70,7 @@ class Editor extends React.Component {
 
     saveChanges() {
         const lessonData = {
-            name: this.state.name,
+            name: this.state.newName,
             htmlString: this.state.htmlString
         }
         const body = this.state.isNew ? lessonData : {
@@ -89,9 +91,19 @@ class Editor extends React.Component {
         .then((response) => {
             return response.ok ? response.json() : Promise.reject(response.status);
         })
-        .then(json => {})
+        .then(json => {
+            this.setState({
+                name: json.name,
+                newName: json.name,
+                htmlString: this.state.htmlString,
+                shouldDisplayPopup: this.state.shouldDisplayPopup,
+                isNew: false,
+                editor: this.state.editor
+            });
+            alert("Salvo com sucesso!");
+        })
         .catch(error => {
-            alert("Houve um erro ao tentar salvar, tente novamente!")
+            alert("Houve um erro ao tentar salvar, tente novamente!");
         })
     }
 
@@ -108,6 +120,7 @@ class Editor extends React.Component {
     updateEditor(editor) {
         this.setState({
             name: this.state.name,
+            newName: this.state.newName,
             htmlString: this.state.htmlString,
             shouldDisplayPopup: this.state.shouldDisplayPopup,
             isNew: this.state.isNew,
@@ -115,9 +128,21 @@ class Editor extends React.Component {
         });
     }
 
+    updateNewName(name) {
+        this.setState({
+            name: this.state.name,
+            newName: name,
+            htmlString: this.state.htmlString,
+            shouldDisplayPopup: this.state.shouldDisplayPopup,
+            isNew: this.state.isNew,
+            editor: this.state.editor
+        });
+    }
+
     updateHtmlString(htmlString) {
         this.setState({
             name: this.state.name,
+            newName: this.state.newName,
             htmlString: htmlString,
             shouldDisplayPopup: this.state.shouldDisplayPopup,
             isNew: this.state.isNew,
@@ -128,6 +153,7 @@ class Editor extends React.Component {
     changePopupVisibility(isVisible) {
         this.setState({ 
             name: this.state.name,
+            newName: this.state.newName,
             htmlString: this.state.htmlString,
             shouldDisplayPopup: isVisible,
             isNew: this.state.isNew,
@@ -137,6 +163,16 @@ class Editor extends React.Component {
 
     render() {
         const userName = localStorage.getItem("userName")
+        const popup = !this.state.shouldDisplayPopup ? null : (
+            <Popup  initialName={this.state.newName}
+                    onTitleChange={name => this.updateNewName(name)}
+                    onClose={() => this.changePopupVisibility(false)}
+                    onSave={() => { 
+                       this.saveChanges();
+                       this.changePopupVisibility(false);
+                    }} 
+            />
+        )
         return (
             <>
                 <div>
@@ -227,7 +263,7 @@ class Editor extends React.Component {
                     <div className="flex absolute right-0">
                         <button type='button' 
                                 className=" block bg-yellow-500 hover:bg-yellow-400 px-6 py-2 mx-1 rounded-lg font-semibold text-white focus:bg-yellow-500" 
-                                onClick={event=> this.saveChanges()}>
+                                onClick={event=> this.changePopupVisibility(true)}>
                             Salvar
                         </button>
                         {/*<button className=" block bg-yellow-500 hover:bg-yellow-400 px-6 py-2 mx-1 rounded-lg font-semibold text-white focus:bg-yellow-500">Publicar aula</button>*/}
@@ -243,6 +279,7 @@ class Editor extends React.Component {
                                   onChange={(e, editor) => this.updateHtmlString(editor.getData())} />
                     </div>
                 </div>
+                {popup}
             </>
         );
     }
