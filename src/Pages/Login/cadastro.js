@@ -153,9 +153,6 @@ class Cadastro extends React.Component {
     
     
                                 <hr className="my-6 border-gray-300 w-full" />
-                                <div className="mb-6 text-yellow-600">
-                                    <label>Após o cadastro, realizar a confirmação do seu email acessando o link que enviaremos para você.</label>
-                                </div>
     
                             </form>
     
