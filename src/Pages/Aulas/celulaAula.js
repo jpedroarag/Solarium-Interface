@@ -1,11 +1,31 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 class CelulaAula extends React.Component {
-    render(){
+    constructor(props) {
+        super(props);
+    }
+    render() {
         return(
             <div className="">
-                 {/*Título*/}
-                <h1 className="mx-2 px-1 pt-3 text-xl font-semibold text-gray-600">{this.props.title}</h1>
+                {/*Título*/}
+                <div style={{ display: "inline-block" }}>
+                    <h1 className="mx-2 px-1 pt-3 text-xl font-semibold text-gray-600" 
+                        style={{ display: "inline-block" }}>
+                            {this.props.title}
+                    </h1>
+                    <Link to={`/editor/${this.props.id}`}>
+                        <button onClick={event => this.props.onEdit()} 
+                                style={{ display: "inline-block", textDecoration: "underline", color: "blue" }}>
+                                    Editar
+                        </button>
+                    </Link>
+                    &nbsp;
+                    <button onClick={event => this.props.onRemove()} 
+                            style={{ display: "inline-block", textDecoration: "underline", color: "blue" }}>
+                                Remover
+                    </button>
+                </div>
                 {/*Data */}
                 <h1 className="mx-2 px-1  text-sm font-semibold text-gray-500"><i>A partir de {this.props.date}</i></h1>
                 {/*Preview da aula*/}

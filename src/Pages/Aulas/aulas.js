@@ -39,15 +39,39 @@ class Aulas extends React.Component {
             headers: headers
         });
         fetch(request)
-            .then((response) => {
-                return response.ok ? response.json() : Promise.reject(response.status);
+        .then((response) => {
+            return response.ok ? response.json() : Promise.reject(response.status);
+        })
+        .then(array => {
+            this.setState({ lessons: array });
+        })
+        .catch(error => {
+            console.log(error)
+        })
+    }
+
+    removeElement(name) {
+        this.setState({ lessons: 
+            this.state.lessons.filter((value, index, array) => {
+                return value.name != name;
             })
-            .then(array => {
-                this.setState({ lessons: array });
-            })
-            .catch(error => {
-                console.log(error)
-            })
+        });
+        const headers = new Headers({
+            "Content-Type": "application/json",
+            "x-access-token": localStorage.getItem("accessToken")
+        });
+        const request = new Request(`${process.env.REACT_APP_API_BASE_URL}/lessons/delete`, {
+            method: "POST",
+            headers: headers,
+            body: JSON.stringify({ name: name })
+        });
+        fetch(request)
+        .then((response) => {
+            return response.ok ? response.json() : Promise.reject(response.status);
+        })
+        .catch(error => {
+            console.log(error)
+        })
     }
 
     getFormattedDateFrom(string) {
@@ -65,17 +89,16 @@ class Aulas extends React.Component {
     render() {
         const userName = localStorage.getItem("userName");
         const allLessons = this.state.lessons.map(element => {
-            
             return (
-                <Link to={`/editor/${element._id}`}>
-                    <CelulaAula id={element._id}
-                                title={element.name}
-                                lineHeight={1.8}
-                                numberOfLines={5}
-                                body={element.htmlString}
-                                date={this.getFormattedDateFrom(element.createdAt)}>
-                    </CelulaAula>
-                </Link>
+                <CelulaAula key={element._id}
+                            id={element._id}
+                            title={element.name}
+                            lineHeight={1.8}
+                            numberOfLines={5}
+                            body={element.htmlString}
+                            date={this.getFormattedDateFrom(element.createdAt)}
+                            onRemove={() => this.removeElement(element.name)}>
+                </CelulaAula>
             );
         })
         const lessonList = !allLessons.isEmpty ? allLessons : (
