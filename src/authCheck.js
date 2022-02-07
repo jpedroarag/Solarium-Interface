@@ -2,6 +2,7 @@ exports.isAuthorized = () => {
     const expirationDate = localStorage.getItem("expirationDate");
 
     if(!expirationDate) {
+        this.signout();
         return false;
     }
 
@@ -9,11 +10,17 @@ exports.isAuthorized = () => {
     const tokenExpirationDate = Date.parse(expirationDate);
 
     const timeOffset = Math.abs(currentDate - tokenExpirationDate);
-    const daysDifference = timeOffset/(1000 * 60 * 60 *24);
+    const daysDifference = timeOffset/(1000 * 60 * 60 * 24);
 
-    return localStorage.getItem("userName") != null 
-        && localStorage.getItem("accessToken") != null
-        && daysDifference > 0;
+    let isAuthorized = localStorage.getItem("userName") != null 
+                    && localStorage.getItem("accessToken") != null
+                    && daysDifference > 0;
+
+    if(!isAuthorized) {
+        this.signout();
+    }
+    
+    return isAuthorized;
 }
 
 exports.signin = (name, token) => {
