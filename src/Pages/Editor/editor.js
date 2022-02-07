@@ -202,7 +202,7 @@ class Editor extends React.Component {
                                         {/*Logo superior esquerdo*/}
 
 
-                                        <img className="hidden lg:block h-5 w-auto" src={logo} alt={"Logo"} />
+                                        <img className="hidden lg:block h-5 w-auto" src={'./Imagens/logo.png'} alt={"Logo"} />
 
 
                                     </div>
@@ -214,7 +214,7 @@ class Editor extends React.Component {
                                         <div className="flex mt-1">
                                             <button type="button" className="mx-2 px-2 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
                                                 <span className="sr-only">Open user menu</span>
-                                                <img className="h-8 w-8 rounded-full" src={placeholderUserImage} alt="" />
+                                                <img className="h-8 w-8 rounded-full" src={'./Imagens/smile.png'} alt="" />
                                                 <h1 className="mt-1 px-2 text-white font-bold">{userName}</h1>
                                             </button>
                                         </div>

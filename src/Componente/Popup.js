@@ -32,16 +32,16 @@ const Popup = (props) => {
             leaveFrom="opacity-100 translate-y-0 sm:scale-100"
             leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
           >
-            <form className="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
-              <div className="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+            <form className="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-4 sm:align-middle sm:max-w-lg sm:w-full">
+              <div className="bg-white px-4 pt-5 pb-2 sm:p-6 sm:pb-4">
                 <div className="sm:flex sm:items-start">
                   <div className="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
-                    <Dialog.Title as="h3" className="text-lg leading-6 font-medium text-gray-900">
-                      Escolha o título da aula
+                    <Dialog.Title as="h3" className="  text-lg leading-6 font-medium text-gray-600">
+                      Escolha o título da aula:
                     </Dialog.Title>
                     <div className="mt-2">
                       <div className="mt-4">
-                          <input type={'text'} value={props.initialName} placeholder="Título da aula" onChange={event => props.onTitleChange(event.target.value)} className="w-full px-4 py-3 rounded-lg bg-gray-200 mt-2 border focus:border-blue-500
+                          <input type={'text'} value={props.initialName} placeholder="Título da aula" onChange={event => props.onTitleChange(event.target.value)} className="w-full px-4 py-3 rounded-lg bg-gray-200  border focus:border-blue-500
                   focus:bg-white focus:outline-none" autoFocus required />
                       </div>
                     </div>
@@ -51,7 +51,7 @@ const Popup = (props) => {
               <div className="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
                 <button
                   type="submit"
-                  className="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-yellow-500 text-base font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:ml-3 sm:w-auto sm:text-sm"
+                  className="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-yellow-500 text-base font-medium text-white hover:bg-yellow-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500 sm:ml-3 sm:w-auto sm:text-sm"
                   onClick={props.onSave}
                 >
                   Salvar

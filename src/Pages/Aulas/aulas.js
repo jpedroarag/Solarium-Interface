@@ -20,7 +20,8 @@ class Aulas extends React.Component {
     }
 
     signout(event) {
-        authCheck.signout();
+        localStorage.removeItem("userName");
+        localStorage.removeItem("accessToken");
         this.redirectToLogin();
     }
 
@@ -39,25 +40,25 @@ class Aulas extends React.Component {
             headers: headers
         });
         fetch(request)
-        .then((response) => {
-            return response.ok ? response.json() : Promise.reject(response.status);
-        })
-        .then(array => {
-            this.setState({ lessons: array });
-        })
-        .catch(error => {
-            console.log(error)
-        })
+            .then((response) => {
+                return response.ok ? response.json() : Promise.reject(response.status);
+            })
+            .then(array => {
+                this.setState({ lessons: array });
+            })
+            .catch(error => {
+                console.log(error)
+            })
     }
 
     render() {
         const userName = localStorage.getItem("userName");
         const allLessons = this.state.lessons.map(element => {
             return (
-                <Link to={`/editor/${element._id}`}>
+                <a>
                     <h1>{element.name}</h1>
                     <div dangerouslySetInnerHTML={{ __html: element.htmlString }} />
-                </Link>
+                </a>
             );
         })
         const lessonList = !allLessons.isEmpty ? allLessons : (
@@ -176,8 +177,8 @@ class Aulas extends React.Component {
                             <div className=" hover:bg-gray-200 focus:bg-gray-300">
                                 <a href="#" className="flex m-4 px-4 py-1 text-xl realtive my-4">
                                     {/* icone info*/}
-                                    <svg class="h-8 w-8 text-yellow-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">  <circle cx="12" cy="12" r="10" />  <line x1="12" y1="16" x2="12" y2="12" />  <line x1="12" y1="8" x2="12.01" y2="8" /></svg>
-                                    <h1 className=" mx-2 mt-px font-semibold text-gray-500">Informações gerais</h1>
+                                    <svg class="h-7 w-7 text-yellow-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">  <circle cx="12" cy="12" r="10" />  <line x1="12" y1="16" x2="12" y2="12" />  <line x1="12" y1="8" x2="12.01" y2="8" /></svg>
+                                    <h1 className=" mx-2 mt-px font-semibold text-gray-500">Informações </h1>
                                     {/* icone seta baixo*/}
                                     <svg class="h-6 w-6 mt-1 text-gray-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">  <polyline points="6 9 12 15 18 9" /></svg>
                                 </a>
