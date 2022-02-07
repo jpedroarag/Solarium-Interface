@@ -2,8 +2,42 @@ import React from "react";
 import { Link } from "react-router-dom";
 const authCheck = require("../../authCheck");
 
-class Cadastro extends React.Component {
+class Recuperacao extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = { email: "" };
+        if(authCheck.isAuthorized()) {
+            this.redirectToList();
+        }
+    }
 
+    updateEmail(event) {
+        this.setState({ email: event.target.value })
+    }
+
+    sendPasswordResetEmail(event) {
+        event.preventDefault();
+
+        const content = JSON.stringify({ email: this.state.email });
+        const headers = new Headers({
+            "Content-Type": "application/json"
+        });
+        const request = new Request(`${process.env.REACT_APP_API_BASE_URL}/auth/sendPasswordResetLink`, {
+            method: "POST",
+            headers: headers,
+            body: content
+        });
+        fetch(request)
+        .then((response) => {
+            return response.ok ? response.json() : Promise.reject(response.status);
+        })
+        .then(json => {
+            alert(`Link para redefinição enviado para ${this.state.email}!`)
+        })
+        .catch(error => {
+            alert("Nenhum usuário foi encontrado com o email informado.")
+        })
+    }
 
     render() {
         return (
@@ -43,18 +77,14 @@ class Cadastro extends React.Component {
 
                             <h1 className="text-xl font-semibold text-gray-500">Recuperação de Senha</h1>
 
-                            <form onSubmit={event => this.signup(event)} className="mt-4">
+                            <form onSubmit={event => this.sendPasswordResetEmail(event)} className="mt-4">
 
                                 <div className="mt-4">
                                     <input type="email" placeholder="Email" onChange={event => this.updateEmail(event)} className="w-full px-4 py-3 rounded-lg bg-gray-200 mt-2 border focus:border-blue-500
                             focus:bg-white focus:outline-none" autoFocus required />
                                 </div>
-
-                                <Link to={'/redefinicao'}>
-                                    <button className="w-full block bg-yellow-500 hover:bg-yellow-400 px-4 py-3 mt-6 rounded-lg font-semibold text-white focus:bg-yellow-500" type="submit"  >Recuperar
+                                <button className="w-full block bg-yellow-500 hover:bg-yellow-400 px-4 py-3 mt-6 rounded-lg font-semibold text-white focus:bg-yellow-500" type="submit"  >Recuperar
                                     </button>
-                                </Link>
-
                             </form>
 
 
@@ -68,4 +98,4 @@ class Cadastro extends React.Component {
     }
 }
 
-export default Cadastro;
+export default Recuperacao;

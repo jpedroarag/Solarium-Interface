@@ -19,8 +19,7 @@ const App = () => {
         <Route path = "/editor" element={<Editor />} />
         <Route path = "/cadastro" element={<Cadastro/>} />
         <Route path = "/recuperacao" element={<Recuperacao />} />
-        <Route path = "/redefinicao" element={<Redefinicao />} />
-        
+        <Route path = "/redefinicao/:resetToken/:userId" element={<Redefinicao />} />
       </Routes>
     </Router>
   );
