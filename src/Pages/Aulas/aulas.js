@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import celulaAulas from "./celulaAula";
-import CelulaAulas from "./celulaAula";
+import CelulaAula from "./celulaAula";
 
 const authCheck = require("../../authCheck");
 const colors = require('tailwindcss/colors');
@@ -51,14 +50,32 @@ class Aulas extends React.Component {
             })
     }
 
+    getFormattedDateFrom(string) {
+        const parsed = Date.parse(string);
+        const date = new Date(parsed);
+        const day = date.getDate();
+        const month = date.getMonth() + 1;
+        const year = date.getFullYear();
+        const formatted = (day < 10 ? "0" + day.toString() : day.toString()) + "/" 
+                        + (month < 10 ? "0" + month.toString() : month.toString()) + "/" 
+                        + year.toString();
+        return formatted;
+    }
+
     render() {
         const userName = localStorage.getItem("userName");
         const allLessons = this.state.lessons.map(element => {
+            
             return (
-                <a>
-                    <h1>{element.name}</h1>
-                    <div dangerouslySetInnerHTML={{ __html: element.htmlString }} />
-                </a>
+                <Link to={`/editor/${element._id}`}>
+                    <CelulaAula id={element._id}
+                                title={element.name}
+                                lineHeight={1.8}
+                                numberOfLines={5}
+                                body={element.htmlString}
+                                date={this.getFormattedDateFrom(element.createdAt)}>
+                    </CelulaAula>
+                </Link>
             );
         })
         const lessonList = !allLessons.isEmpty ? allLessons : (
@@ -233,10 +250,7 @@ class Aulas extends React.Component {
                                 <hr className="my-3 mr-3 border-gray-300 " />
 
                                 <div className="overflow-auto  hover:overflow-scroll h-3/5 ">
-                                    <CelulaAulas />
-
                                     {lessonList}
-
                                 </div>
 
 
