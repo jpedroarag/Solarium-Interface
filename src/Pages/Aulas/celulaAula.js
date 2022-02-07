@@ -7,7 +7,7 @@ class CelulaAula extends React.Component {
     }
     render() {
         return(
-            <div className="">
+            <div className="w-auto">
                 {/*Título*/}
                 <div style={{ display: "inline-block" }}>
                     <h1 className="mx-2 px-1 pt-3 text-xl font-semibold text-gray-600" 
@@ -15,14 +15,16 @@ class CelulaAula extends React.Component {
                             {this.props.title}
                     </h1>
                     <Link to={`/editor/${this.props.id}`}>
-                        <button onClick={event => this.props.onEdit()} 
-                                style={{ display: "inline-block", textDecoration: "underline", color: "blue" }}>
+                            <button className="bg-gray-300 rounded-lg px-2 py-1 text-gray-700 font-semibold hover:bg-gray-400 focus:bg-gray-300" onClick={event => this.props.onEdit()} 
+                                //style={{ display: "inline-block", textDecoration: "underline", color: "blue" }}
+                                >
                                     Editar
                         </button>
                     </Link>
                     &nbsp;
-                    <button onClick={event => this.props.onRemove()} 
-                            style={{ display: "inline-block", textDecoration: "underline", color: "blue" }}>
+                    <button className="bg-gray-300 rounded-lg px-2 py-1 text-gray-700 font-semibold hover:bg-gray-400 focus:bg-gray-300" onClick={event => this.props.onRemove()} 
+                            //style={{ display: "inline-block", textDecoration: "underline", color: "blue" }}
+                            >
                                 Remover
                     </button>
                 </div>
