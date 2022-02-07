@@ -4,6 +4,7 @@ import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import Popup from "../../Componente/Popup";
 
+
 const logo = process.env.REACT_APP_PUBLIC_URL + "/Imagens/logo.png";
 const placeholderUserImage = process.env.REACT_APP_PUBLIC_URL + "/Imagens/smile.png";
 const authCheck = require("../../authCheck");
@@ -283,6 +284,10 @@ class Editor extends React.Component {
                     </div>
                 </div>
                 {popup}
+                <div >
+                
+                </div>
+                
             </>
         );
     }

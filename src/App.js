@@ -5,6 +5,8 @@ import Home from './Pages/Home/home';
 import Aulas from './Pages/Aulas/aulas';
 import Editor from './Pages/Editor/editor';
 import Cadastro from './Pages/Login/cadastro';
+import Recuperacao from './Pages/Login/recuperacao';
+import Redefinicao from './Pages/Login/redefinicao';
 
 const App = () => {
   return (
@@ -16,6 +18,9 @@ const App = () => {
         <Route path = "/editor/:id" element={<Editor />} />
         <Route path = "/editor" element={<Editor />} />
         <Route path = "/cadastro" element={<Cadastro/>} />
+        <Route path = "/recuperacao" element={<Recuperacao />} />
+        <Route path = "/redefinicao" element={<Redefinicao />} />
+        
       </Routes>
     </Router>
   );

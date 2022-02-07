@@ -114,7 +114,9 @@ class Login extends React.Component {
                                 </div>
                                 <button className="w-full block bg-yellow-500 hover:bg-yellow-400 px-4 py-3 mt-6 rounded-lg font-semibold text-white focus:bg-yellow-500" type="submit"  >Acessar</button>
                                 <div className="mt-4 ">
+                                    <Link to={'/recuperacao'}>
                                     <a href="#" className="text-gray-500 hover:text-blue-700 focus:outline-none">Esqueci minha senha</a>
+                                    </Link>
                                 </div>
     
     

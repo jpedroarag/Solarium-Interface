@@ -227,7 +227,7 @@ class Aulas extends React.Component {
 
 
                         {/* navegação direita*/}
-                        <div className="mr-32 ">
+                        <div className="mr-32 w-full">
 
                             <div className=" flex mt-16 ml-3">
                                 <div className="flex mt-5">
