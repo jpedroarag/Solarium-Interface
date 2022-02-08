@@ -22,7 +22,7 @@ class CelulaAula extends React.Component {
                         </button>
                     </Link>
                     &nbsp;
-                    <button className="bg-gray-300 rounded-lg px-2 py-1 text-gray-700 font-semibold hover:bg-gray-400 focus:bg-gray-300" onClick={event => this.props.onRemove()} 
+                    <button className="bg-gray-300 rounded-lg px-2 py-1 text-gray-700 font-semibold hover:bg-red-400 focus:bg-gray-300" onClick={event => this.props.onRemove()} 
                             //style={{ display: "inline-block", textDecoration: "underline", color: "blue" }}
                             >
                                 Remover
