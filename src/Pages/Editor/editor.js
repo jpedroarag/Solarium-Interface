@@ -297,7 +297,7 @@ class TelaEditor extends React.Component {
                 {/* Editor */}
                 <div className="mx-16" style={{ display: "flex", flexDirection: "column" }}>
                     <div className='' style={{ width: '100%', height: '100%', marginTop: '1rem', display: 'inline-block', textAlign: 'left' }}>
-                              <div id="editor" style={{ backgroundColor: "white" }}></div> 
+                              <div className="ck-content" id="editor" style={{ backgroundColor: "white" }}></div> 
                     </div>
                 </div>
                 {popup}
