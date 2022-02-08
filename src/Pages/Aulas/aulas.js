@@ -252,7 +252,7 @@ class Aulas extends React.Component {
                         {/* navegação direita*/}
                         <div className="mr-32 w-2/3">
 
-                            <div className=" flex mt-16 ml-3">
+                            <div className=" relative flex mt-16 ml-3">
                                 <div className="flex mt-5">
                                     <svg class="h-8 w-8 text-yellow-500 mx-2" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z" />  <rect x="8" y="4" width="12" height="12" rx="2" />  <path d="M16 16v2a2 2 0 0 1 -2 2h-8a2 2 0 0 1 -2 -2v-8a2 2 0 0 1 2 -2h2" /></svg>
                                     <h1 className="font-bold text-xl text-white ">
@@ -260,7 +260,7 @@ class Aulas extends React.Component {
                                     </h1>
                                 </div>
                                 {/* Criar nova aula*/}
-                                <div className="flex absolute right-0 mr-32 mt-2">
+                                <div className="absolute right-0 mt-2">
                                     <Link to={'/editor'}>
                                         <button type='button' className=" block bg-yellow-500 hover:bg-yellow-400 px-6 py-2 mx-1 rounded-lg font-semibold text-white focus:bg-yellow-500">Criar nova aula
                                         </button>
