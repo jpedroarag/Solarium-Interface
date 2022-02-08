@@ -94,9 +94,9 @@ class Cadastro extends React.Component {
     render() {
         return (
             <div>
-                <section className='flex  md:flex-row realtive  '>
+                <section className='flex  md:flex-row   '>
                     
-                    <div className="w-full realative content-center items-center md:w-1/2 xl:w-2/3 xl: ">
+                    <div className="w-full relative content-center items-center md:w-1/2 xl:w-2/3 xl: ">
                         <div className="lg:items-center ">
                             <img className="mx-auto mt-8 w-2/6 w:auto " src='./Imagens/logo.png' alt="" />
                             <img  className="w-1/2 mx-auto"src="./Imagens/ilustracao.png" alt="" />
@@ -109,9 +109,9 @@ class Cadastro extends React.Component {
                             px-4 py-3 mt-6  left-0 my-4 mx-auto rounded-lg font-semibold text-white focus:bg-yellow-500">Já possui uma conta? Faça o login!</button>
                             </Link>
                         </div>
-                        <div className=" inset-x-0 top-0 bg-gray-700 pl-16 ">
-                            <h1 className=" text-white text-center">
-                            Ambiente Virtual de Aprendizagem da Universidade Federal do Ceará   | <a href="#" className="text-white hover:text-blue-700 focus:outline-none"> Política de privacidade</a>  |<a href="#" className="text-white hover:text-blue-700 focus:outline-none"> Ajuda</a>
+                        <div className="absolute bottom-0 inset-x-0 bg-gray-700 pl-16 ">
+                            <h1 className="text-sm text-white text-center">
+                            Ambiente Virtual de Aprendizagem da Universidade Federal do Ceará   | <a href="#" className="text-white hover:text-yellow-500 focus:outline-none"> Política de privacidade</a>  |<a href="#" className="text-white hover:text-blue-700 focus:outline-none"> Ajuda</a>
                             </h1>
                             
                         </div> 
