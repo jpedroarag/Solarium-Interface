@@ -1,15 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { CKEditor } from '@ckeditor/ckeditor5-react';
-import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+//import { CKEditor } from '@ckeditor/ckeditor5-react';
+//import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import Popup from "../../Componente/Popup";
-
+import Editor from "ckeditor5-custom-build/build/ckeditor";
 
 const logo = process.env.REACT_APP_PUBLIC_URL + "/Imagens/logo.png";
 const placeholderUserImage = process.env.REACT_APP_PUBLIC_URL + "/Imagens/smile.png";
 const authCheck = require("../../authCheck");
 
-class Editor extends React.Component {
+class TelaEditor extends React.Component {
     constructor(props) {
         super(props);
 
@@ -34,6 +34,28 @@ class Editor extends React.Component {
         if(!isNew) {
             this.fetchLessonFromServer(id);
         }
+    }
+
+    componentDidMount() {
+        Editor
+        .create(document.querySelector('#editor'), {
+            licenseKey: ''
+        })
+        .then(editor => {
+            this.updateEditor(editor);
+
+            editor.ui.getEditableElement().parentElement.insertBefore(
+                editor.ui.view.toolbar.element,
+                editor.ui.getEditableElement()
+            );
+            
+            editor.model.document.on('change:data', (evt, data) => {
+                this.updateHtmlString(editor.getData());
+            });
+        })
+        .catch( error => {
+            console.error(error.stack);
+        });
     }
 
     fetchLessonFromServer(id) {
@@ -278,9 +300,10 @@ class Editor extends React.Component {
                 <div className="mx-16" style={{ display: "flex", flexDirection: "column" }}>
                     <div className='' style={{ width: '100%', height: '100%', marginTop: '1rem', display: 'inline-block', textAlign: 'left' }}>
                         {/*<div style={{ width: '100%', height: '100%', display: 'inline-block', textAlign: 'right', marginBottom: '5px' }}></div>*/}
-                        <CKEditor editor={ClassicEditor} 
+                        {/*<CKEditor editor={ClassicEditor} 
                                   onReady={editor => this.updateEditor(editor)}  
-                                  onChange={(e, editor) => this.updateHtmlString(editor.getData())} />
+                                  onChange={(e, editor) => this.updateHtmlString(editor.getData())} />*/}
+                              <div id="editor" style={{ backgroundColor: "white" }}></div> 
                     </div>
                 </div>
                 {popup}
@@ -293,4 +316,4 @@ class Editor extends React.Component {
     }
 }
 
-export default Editor;
+export default TelaEditor;

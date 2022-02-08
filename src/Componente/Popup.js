@@ -41,7 +41,7 @@ const Popup = (props) => {
                     </Dialog.Title>
                     <div className="mt-2">
                       <div className="mt-4">
-                          <input type={'text'} value={props.initialName} placeholder="Título da aula" onChange={event => props.onTitleChange(event.target.value)} className="w-full px-4 py-3 rounded-lg bg-gray-200  border focus:border-blue-500
+                          <input type={'text'} value={props.initialName} placeholder="Título da aula" maxlength="30" onChange={event => props.onTitleChange(event.target.value)} className="w-full px-4 py-3 rounded-lg bg-gray-200  border focus:border-blue-500
                   focus:bg-white focus:outline-none" autoFocus required />
                       </div>
                     </div>
