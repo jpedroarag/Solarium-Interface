@@ -1,7 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-//import { CKEditor } from '@ckeditor/ckeditor5-react';
-//import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import Popup from "../../Componente/Popup";
 import Editor from "ckeditor5-custom-build/build/ckeditor";
 
@@ -299,10 +297,6 @@ class TelaEditor extends React.Component {
                 {/* Editor */}
                 <div className="mx-16" style={{ display: "flex", flexDirection: "column" }}>
                     <div className='' style={{ width: '100%', height: '100%', marginTop: '1rem', display: 'inline-block', textAlign: 'left' }}>
-                        {/*<div style={{ width: '100%', height: '100%', display: 'inline-block', textAlign: 'right', marginBottom: '5px' }}></div>*/}
-                        {/*<CKEditor editor={ClassicEditor} 
-                                  onReady={editor => this.updateEditor(editor)}  
-                                  onChange={(e, editor) => this.updateHtmlString(editor.getData())} />*/}
                               <div id="editor" style={{ backgroundColor: "white" }}></div> 
                     </div>
                 </div>
