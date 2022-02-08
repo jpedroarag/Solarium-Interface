@@ -36,7 +36,8 @@ class CelulaAula extends React.Component {
                          style={{   lineHeight: `${this.props.lineHeight}em`, 
                                     maxHeight: `${this.props.numberOfLines*this.props.lineHeight}em`, 
                                     overflow: "hidden" }}
-                         dangerouslySetInnerHTML={{ __html: this.props.body }}/>
+                         dangerouslySetInnerHTML={{ __html: this.props.body }}
+                         className="ck-content" />
                 </h2>
                 <hr className="my-2 mx-2 border-gray-300 " />
             </div>
