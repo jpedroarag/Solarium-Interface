@@ -134,7 +134,7 @@ class Aulas extends React.Component {
                                     {/*Logo superior esquerdo*/}
 
 
-                                    <img class="hidden lg:block h-5 w-auto" src="./Imagens/logo.png" alt="Workflow" />
+                                    <img class="hidden lg:block h-5 w-auto" src="./Imagens/logo.svg" alt="Workflow" />
 
                                 </div>
 

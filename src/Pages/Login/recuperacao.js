@@ -46,7 +46,7 @@ class Recuperacao extends React.Component {
 
                     <div className="w-full relative content-center items-center md:w-1/2 xl:w-2/3 xl: ">
                         <div className="lg:items-center ">
-                            <img className="mx-auto mt-8 w-2/6 w:auto " src='./Imagens/logo.png' alt="" />
+                            <img className="mx-auto mt-8 w-2/6 w:auto " src='./Imagens/logo.svg' alt="" />
                             <img className="w-1/2 mx-auto" src="./Imagens/ilustracao.png" alt="" />
                             <img className="w-1/3  mx-auto" src="./Imagens/ufcimg.png" alt="" />
 

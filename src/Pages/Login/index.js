@@ -1,18 +1,64 @@
 import React from "react";
 import { Link } from "react-router-dom";
+
+const logo = process.env.REACT_APP_PUBLIC_URL + "/Imagens/logo.svg";
+const ilustracao = process.env.REACT_APP_PUBLIC_URL + "/Imagens/ilustracao.png";
+const ufcLogo = process.env.REACT_APP_PUBLIC_URL + "/Imagens/ufcimg.png";
 const authCheck = require("../../authCheck");
 
 class Login extends React.Component {
     constructor(props) {
         super(props);
+
         this.state = {
             email: "",
             password: "",
             error: null
         };
+    }
+
+    componentDidMount() {
+        const path = window.location.pathname;
+        const id = path.substring(path.lastIndexOf('/') + 1);
+        const isVerification = (id != null || id == "verificarEmail") && id != "";
+        
+        if(isVerification) {
+            authCheck.signout();
+            this.verifyEmail(id);
+            return;
+        }
+
         if(authCheck.isAuthorized()) {
             this.redirectToList();
         }
+    }
+
+    verifyEmail(userId) {
+        const headers = new Headers({
+            "Content-Type": "application/json"
+        });
+        const request = new Request(`${process.env.REACT_APP_API_BASE_URL}/auth/verify`, {
+            method: "POST",
+            headers: headers,
+            body: JSON.stringify({ id: userId })
+        });
+        fetch(request)
+        .then((response) => {
+            return response.ok ? response.json() : Promise.reject(response.status);
+        })
+        .then(json => {
+            var expirationDate = new Date();
+            expirationDate.setDate(expirationDate.getDate() + 1);
+
+            localStorage.setItem("userName", json.name);
+            localStorage.setItem("accessToken", json.accessToken);
+            localStorage.setItem("expirationDate", expirationDate);
+            
+            alert("Email verificado com sucesso!");
+        })
+        .catch(error => {
+            alert("Link inválido.")
+        })
     }
 
     updateEmail(event) {
@@ -69,9 +115,9 @@ class Login extends React.Component {
                     
                     <div className="w-full inset-0 relative content-center items-center md:w-1/2 xl:w-2/3 xl: ">
                         <div className="lg:items-center ">
-                            <img className="mx-auto mt-8 w-2/6 w:auto " src='./Imagens/logo.png' alt="" />
-                            <img  className="w-1/2 mx-auto"src="./Imagens/ilustracao.png" alt="" />
-                            <img  className="w-1/3  mx-auto"src="./Imagens/ufcimg.png" alt="" />
+                            <img className="mx-auto mt-8 w-2/6 w:auto " src={logo} alt="" />
+                            <img  className="w-1/2 mx-auto"src={ilustracao} alt="" />
+                            <img  className="w-1/3  mx-auto"src={ufcLogo} alt="" />
     
                         </div>
                         <div className="px-16 " >

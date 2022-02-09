@@ -32,7 +32,7 @@ const home = props => {
                                 {/*Logo superior esquerdo*/}
                                 <Link to={'/home'}>
                                 <a href="#">
-                                <img class="hidden lg:block h-5 w-auto" src="./Imagens/logo.png" alt="Workflow" />
+                                <img class="hidden lg:block h-5 w-auto" src="./Imagens/logo.svg" alt="Workflow" />
                                 </a>
                                 </Link>
                             </div>

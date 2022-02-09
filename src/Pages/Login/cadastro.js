@@ -4,13 +4,15 @@ const authCheck = require("../../authCheck");
 
 class Cadastro extends React.Component {
     constructor(props) {
-        super(props)
+        super(props);
+
         this.state = {
             name: "",
             email: "",
             password: "",
             error: null
         };
+
         if(authCheck.isAuthorized()) {
             this.redirectToList();
         }
@@ -69,17 +71,14 @@ class Cadastro extends React.Component {
         });
         fetch(request)
         .then((response) => {
-            return response.ok ? response.json() : Promise.reject(response.status);
+            return response.status >= 500 ? Promise.reject(response.status) : response.json();
         })
         .then(json => {
-            var expirationDate = new Date();
-            expirationDate.setDate(expirationDate.getDate() + 1);
-
-            localStorage.setItem("userName", json.name);
-            localStorage.setItem("accessToken", json.accessToken);
-            localStorage.setItem("expirationDate", expirationDate);
-            
-            this.redirectToList();
+            if(json.error) {
+                alert(json.error);
+                return;
+            }
+            alert(`Email de verificação enviado para ${this.state.email}!`)
         })
         .catch(error => {
             alert("Usuário já cadastrado com o email informado.")
@@ -98,7 +97,7 @@ class Cadastro extends React.Component {
                     
                     <div className="w-full relative content-center items-center md:w-1/2 xl:w-2/3 xl: ">
                         <div className="lg:items-center ">
-                            <img className="mx-auto mt-8 w-2/6 w:auto " src='./Imagens/logo.png' alt="" />
+                            <img className="mx-auto mt-8 w-2/6 w:auto " src='./Imagens/logo.svg' alt="" />
                             <img  className="w-1/2 mx-auto"src="./Imagens/ilustracao.png" alt="" />
                             <img  className="w-1/3  mx-auto"src="./Imagens/ufcimg.png" alt="" />
     

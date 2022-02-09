@@ -20,6 +20,7 @@ const App = () => {
         <Route path = "/cadastro" element={<Cadastro/>} />
         <Route path = "/recuperacao" element={<Recuperacao />} />
         <Route path = "/redefinicao/:resetToken/:userId" element={<Redefinicao />} />
+        <Route path = "/verificarEmail/:userId" element={<Login />} />
       </Routes>
     </Router>
   );

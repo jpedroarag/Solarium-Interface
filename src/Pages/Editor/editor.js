@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Popup from "../../Componente/Popup";
 import Editor from "ckeditor5-custom-build/build/ckeditor";
 
-const logo = process.env.REACT_APP_PUBLIC_URL + "/Imagens/logo.png";
+const logo = process.env.REACT_APP_PUBLIC_URL + "/Imagens/logo.svg";
 const placeholderUserImage = process.env.REACT_APP_PUBLIC_URL + "/Imagens/smile.png";
 const authCheck = require("../../authCheck");
 
@@ -223,7 +223,7 @@ class TelaEditor extends React.Component {
                                         {/*Logo superior esquerdo*/}
 
 
-                                        <img className="hidden lg:block h-5 w-auto" src={this.state.isNew ? "./Imagens/logo.png" : logo} alt={"Logo"} />
+                                        <img className="hidden lg:block h-5 w-auto" src={this.state.isNew ? "./Imagens/logo.svg" : logo} alt={"Logo"} />
 
 
                                     </div>

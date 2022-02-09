@@ -1,12 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const logo = process.env.REACT_APP_PUBLIC_URL + "/Imagens/logo.png";
+const logo = process.env.REACT_APP_PUBLIC_URL + "/Imagens/logo.svg";
 const ilustracao = process.env.REACT_APP_PUBLIC_URL + "/Imagens/ilustracao.png";
 const ufcLogo = process.env.REACT_APP_PUBLIC_URL + "/Imagens/ufcimg.png";
 const authCheck = require("../../authCheck");
-
-// http://localhost:3000/redefinicao/1b10486d130057bcd733ca310623adb5e97b6eaa54674cdbd77e3c9a7caf40f1/61feb616a8b74ab9e862c6fb
 
 class Redefinicao extends React.Component {
     constructor(props) {
