@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import CelulaAula from "./celulaAula";
 
+const placeholderUserImage = process.env.REACT_APP_PUBLIC_URL + "/Imagens/smile.png";
 const authCheck = require("../../authCheck");
 const colors = require('tailwindcss/colors');
 
@@ -19,8 +20,7 @@ class Aulas extends React.Component {
     }
 
     signout(event) {
-        localStorage.removeItem("userName");
-        localStorage.removeItem("accessToken");
+        authCheck.signout();
         this.redirectToLogin();
     }
 
@@ -145,7 +145,7 @@ class Aulas extends React.Component {
                                     <div className="flex mt-1">
                                         <button type="button" class="mx-2 px-2 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
                                             <span class="sr-only">Open user menu</span>
-                                            <img class="h-8 w-8 rounded-full" src="./imagens/smile.png" alt="" />
+                                            <img class="h-8 w-8 rounded-full" src={placeholderUserImage} alt="" />
                                             <h1 className="mt-1 px-2 text-white font-bold">{userName}</h1>
                                         </button>
                                     </div>
